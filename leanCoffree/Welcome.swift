@@ -2,8 +2,10 @@ import SwiftUI
 
 struct Welcome: View {
     
+    @Binding var state: String
+    
     func doThing(_ action: String) {
-        print("SwiftUI: Button tapped")
+        state = action
     }
     
     var body: some View {
@@ -15,26 +17,28 @@ struct Welcome: View {
                         .font(.title)
                         .foregroundColor(.white)
                         .padding(.top)
+                    
                     Spacer()
+                    
                     Button(action: {self.doThing("CREATE")}) {
                         Text("Create a new Lean Coffree session")
                             .foregroundColor(.white)
                             .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white, lineWidth: 3)
-                            )
                     }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.white, lineWidth: 3))
                     .padding(.bottom)
+                    
                     Button(action: {self.doThing("JOIN")}) {
                         Text("Join a Lean Coffree session")
                             .foregroundColor(.white)
                             .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white, lineWidth: 3)
-                            )
                     }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.white, lineWidth: 3))
+                    
                     Spacer()
                 })
     }
@@ -42,6 +46,6 @@ struct Welcome: View {
 
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
-        Welcome()
+        Welcome(state: .constant("WELCOME"))
     }
 }

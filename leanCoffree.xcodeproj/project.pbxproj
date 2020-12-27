@@ -12,6 +12,10 @@
 		7047F1732597EB870092F739 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F1722597EB870092F739 /* Preview Assets.xcassets */; };
 		7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F19C2597ECDF0092F739 /* StateMachine.swift */; };
 		7047F1A82597EEB20092F739 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1A72597EEB20092F739 /* Welcome.swift */; };
+		7047F1BF25980E980092F739 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1BE25980E980092F739 /* CreateSession.swift */; };
+		7047F1C425981CBB0092F739 /* EnterSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* EnterSession.swift */; };
+		7047F1C925981F260092F739 /* CurrentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C825981F260092F739 /* CurrentSession.swift */; };
+		7047F1D1259824210092F739 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1D0259824210092F739 /* JoinSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 		7047F1842597EB870092F739 /* leanCoffreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leanCoffreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F19C2597ECDF0092F739 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		7047F1A72597EEB20092F739 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		7047F1BE25980E980092F739 /* CreateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
+		7047F1C325981CBB0092F739 /* EnterSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterSession.swift; sourceTree = "<group>"; };
+		7047F1C825981F260092F739 /* CurrentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSession.swift; sourceTree = "<group>"; };
+		7047F1D0259824210092F739 /* JoinSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +97,16 @@
 		7047F16A2597EB840092F739 /* leanCoffree */ = {
 			isa = PBXGroup;
 			children = (
+				7047F1C825981F260092F739 /* CurrentSession.swift */,
 				7047F19C2597ECDF0092F739 /* StateMachine.swift */,
 				7047F16B2597EB840092F739 /* leanCoffreeApp.swift */,
 				7047F16F2597EB870092F739 /* Assets.xcassets */,
 				7047F1742597EB870092F739 /* Info.plist */,
 				7047F1712597EB870092F739 /* Preview Content */,
 				7047F1A72597EEB20092F739 /* Welcome.swift */,
+				7047F1BE25980E980092F739 /* CreateSession.swift */,
+				7047F1C325981CBB0092F739 /* EnterSession.swift */,
+				7047F1D0259824210092F739 /* JoinSession.swift */,
 			);
 			path = leanCoffree;
 			sourceTree = "<group>";
@@ -238,7 +250,11 @@
 			files = (
 				7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */,
 				7047F1A82597EEB20092F739 /* Welcome.swift in Sources */,
+				7047F1C925981F260092F739 /* CurrentSession.swift in Sources */,
+				7047F1C425981CBB0092F739 /* EnterSession.swift in Sources */,
+				7047F1BF25980E980092F739 /* CreateSession.swift in Sources */,
 				7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */,
+				7047F1D1259824210092F739 /* JoinSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"leanCoffree/Preview Content\"";
 				DEVELOPMENT_TEAM = V63WCKWA54;
@@ -405,6 +422,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = arlevin.org.leanCoffree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -415,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"leanCoffree/Preview Content\"";
 				DEVELOPMENT_TEAM = V63WCKWA54;
@@ -427,6 +446,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = arlevin.org.leanCoffree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
