@@ -1,0 +1,21 @@
+PODS:
+  - SocketRocket (0.5.1)
+  - StompClientLib (1.4.0):
+    - SocketRocket
+
+DEPENDENCIES:
+  - SocketRocket
+  - StompClientLib
+
+SPEC REPOS:
+  trunk:
+    - SocketRocket
+    - StompClientLib
+
+SPEC CHECKSUMS:
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  StompClientLib: bb96ebd29d4b9766fff97a4cbe2f515a7242c17a
+
+PODFILE CHECKSUM: 20bee1ba01315bea034d0b5fad3878863cae5c58
+
+COCOAPODS: 1.10.0

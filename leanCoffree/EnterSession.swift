@@ -4,9 +4,16 @@ struct EnterSession: View {
     
     @Binding var state: String
     @Binding var session: CurrentSession
+    var stompClient: StompClient;
     
     func goHome() {
         state = "WELCOME"
+    }
+    
+    init(state: Binding<String>, session: Binding<CurrentSession>) {
+        _state = state
+        _session = session
+        stompClient = StompClient(session.wrappedValue.id)
     }
     
     var body: some View {

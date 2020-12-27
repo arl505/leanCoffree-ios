@@ -16,6 +16,8 @@
 		7047F1C425981CBB0092F739 /* EnterSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* EnterSession.swift */; };
 		7047F1C925981F260092F739 /* CurrentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C825981F260092F739 /* CurrentSession.swift */; };
 		7047F1D1259824210092F739 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1D0259824210092F739 /* JoinSession.swift */; };
+		70ABC2BE259846410019957E /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABC2BD259846410019957E /* StompClient.swift */; };
+		B492BC5D64C016848C8DD17F /* libPods-leanCoffree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B343D3B26B32C14053F163F /* Pods-leanCoffree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.debug.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.debug.xcconfig"; sourceTree = "<group>"; };
+		1EC0C7905AE73CF2B4BFCF4F /* Pods-leanCoffree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.release.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.release.xcconfig"; sourceTree = "<group>"; };
 		7047F1682597EB840092F739 /* leanCoffree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leanCoffree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F16B2597EB840092F739 /* leanCoffreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leanCoffreeApp.swift; sourceTree = "<group>"; };
 		7047F16F2597EB870092F739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		7047F1C325981CBB0092F739 /* EnterSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterSession.swift; sourceTree = "<group>"; };
 		7047F1C825981F260092F739 /* CurrentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSession.swift; sourceTree = "<group>"; };
 		7047F1D0259824210092F739 /* JoinSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
+		70ABC2BD259846410019957E /* StompClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClient.swift; sourceTree = "<group>"; };
+		C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-leanCoffree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B492BC5D64C016848C8DD17F /* libPods-leanCoffree.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,11 +83,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BEB34703A7965715E090DDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B343D3B26B32C14053F163F /* Pods-leanCoffree.debug.xcconfig */,
+				1EC0C7905AE73CF2B4BFCF4F /* Pods-leanCoffree.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7047F15F2597EB840092F739 = {
 			isa = PBXGroup;
 			children = (
 				7047F16A2597EB840092F739 /* leanCoffree */,
 				7047F1692597EB840092F739 /* Products */,
+				2BEB34703A7965715E090DDC /* Pods */,
+				7DD036C190FA0AEAA79A272B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,16 +115,17 @@
 		7047F16A2597EB840092F739 /* leanCoffree */ = {
 			isa = PBXGroup;
 			children = (
-				7047F1C825981F260092F739 /* CurrentSession.swift */,
-				7047F19C2597ECDF0092F739 /* StateMachine.swift */,
 				7047F16B2597EB840092F739 /* leanCoffreeApp.swift */,
-				7047F16F2597EB870092F739 /* Assets.xcassets */,
-				7047F1742597EB870092F739 /* Info.plist */,
-				7047F1712597EB870092F739 /* Preview Content */,
+				7047F19C2597ECDF0092F739 /* StateMachine.swift */,
 				7047F1A72597EEB20092F739 /* Welcome.swift */,
 				7047F1BE25980E980092F739 /* CreateSession.swift */,
-				7047F1C325981CBB0092F739 /* EnterSession.swift */,
 				7047F1D0259824210092F739 /* JoinSession.swift */,
+				7047F1C325981CBB0092F739 /* EnterSession.swift */,
+				7047F1742597EB870092F739 /* Info.plist */,
+				7047F16F2597EB870092F739 /* Assets.xcassets */,
+				7047F1C825981F260092F739 /* CurrentSession.swift */,
+				7047F1712597EB870092F739 /* Preview Content */,
+				70ABC2BD259846410019957E /* StompClient.swift */,
 			);
 			path = leanCoffree;
 			sourceTree = "<group>";
@@ -119,6 +138,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7DD036C190FA0AEAA79A272B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7047F18D2597EB870092F739 /* Build configuration list for PBXNativeTarget "leanCoffree" */;
 			buildPhases = (
+				2A927FAB19FCED615B6DF924 /* [CP] Check Pods Manifest.lock */,
 				7047F1642597EB840092F739 /* Sources */,
 				7047F1652597EB840092F739 /* Frameworks */,
 				7047F1662597EB840092F739 /* Resources */,
@@ -243,6 +271,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A927FAB19FCED615B6DF924 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-leanCoffree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7047F1642597EB840092F739 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -254,6 +307,7 @@
 				7047F1C425981CBB0092F739 /* EnterSession.swift in Sources */,
 				7047F1BF25980E980092F739 /* CreateSession.swift in Sources */,
 				7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */,
+				70ABC2BE259846410019957E /* StompClient.swift in Sources */,
 				7047F1D1259824210092F739 /* JoinSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +460,7 @@
 		};
 		7047F18E2597EB870092F739 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B343D3B26B32C14053F163F /* Pods-leanCoffree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -430,6 +485,7 @@
 		};
 		7047F18F2597EB870092F739 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EC0C7905AE73CF2B4BFCF4F /* Pods-leanCoffree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
