@@ -1,3 +1,3 @@
 public struct SessionDetails {
-    var id, localStatus, sessionStatus: String
+    var id, localStatus, sessionStatus, dispalyName: String
 }

@@ -46,6 +46,6 @@ struct Welcome: View {
 
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
-        Welcome(session: .constant(SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")))
+        Welcome(session: .constant(SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")))
     }
 }

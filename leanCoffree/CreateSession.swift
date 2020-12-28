@@ -38,13 +38,13 @@ struct CreateSession: View {
             URLSession.shared.dataTask(with: verifyRequest) { data, response, error in
                 guard let data = data else { return }
                 let resData = try! JSONDecoder().decode(VerifyResponse.self, from: data)
-                session = SessionDetails(id: resData.sessionDetails.sessionId, localStatus: "ENTER_SESSION", sessionStatus: resData.sessionDetails.sessionStatus)
+                session = SessionDetails(id: resData.sessionDetails.sessionId, localStatus: "ENTER_SESSION", sessionStatus: resData.sessionDetails.sessionStatus, dispalyName: "")
             }.resume()
         }.resume()
     }
     
     func goHome() {
-        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")
+        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")
     }
     
     var body: some View {
@@ -67,7 +67,7 @@ struct CreateSession: View {
 struct CreateSession_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CreateSession(session: .constant(SessionDetails(id: "", localStatus: "", sessionStatus: "")))
+            CreateSession(session: .constant(SessionDetails(id: "", localStatus: "", sessionStatus: "", dispalyName: "")))
         }
     }
 }

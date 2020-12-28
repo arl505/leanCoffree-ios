@@ -4,7 +4,7 @@ import SwiftUI
 
 class StompClient: StompClientLibDelegate {
     
-    @Binding var session: SessionDetails
+    var session: SessionDetails
     @Binding var usersDetails: UsersMessage
     @Binding var topicsDetails: AllTopicsMessage
     @Binding var discussionVotesDetails: DiscussionVotesDetails
@@ -15,11 +15,11 @@ class StompClient: StompClientLibDelegate {
         let status, error: String?
     }
     
-    init(session: Binding<SessionDetails>,
+    init(session: SessionDetails,
          usersDetails: Binding<UsersMessage>,
          topicsDetails: Binding<AllTopicsMessage>,
          discussionVotesDetails: Binding<DiscussionVotesDetails>) {
-        _session = session
+        self.session = session
         _usersDetails = usersDetails
         _topicsDetails = topicsDetails
         _discussionVotesDetails = discussionVotesDetails
@@ -40,7 +40,6 @@ class StompClient: StompClientLibDelegate {
             createRequest.httpMethod = "GET"
             URLSession.shared.dataTask(with: createRequest) { data, response, error in
                 guard data != nil else { return }
-                self.session.localStatus = "SESSION"
             }.resume()
         }
     }

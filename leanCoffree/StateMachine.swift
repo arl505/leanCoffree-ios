@@ -2,7 +2,7 @@ import SwiftUI
 
 struct StateMachine: View {
     
-    @State private var session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")
+    @State private var session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")
     
     @State private var usersDetails = UsersMessage(moderator: nil, displayNames: nil)
     

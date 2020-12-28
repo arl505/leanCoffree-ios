@@ -7,16 +7,16 @@ struct JoinSession: View {
     @Binding var session: SessionDetails
     
     struct VerifyResponse: Decodable {
-        let verificationStatus: String
-        let sessionDetails: SessionDetailsObject
+        let verificationStatus: String?
+        let sessionDetails: SessionDetailsObject?
     }
     
     struct SessionDetailsObject: Decodable {
-        let sessionId, sessionStatus: String
+        let sessionId, sessionStatus: String?
     }
     
     func goHome() {
-        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")
+        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")
     }
     
     func submit() {
@@ -33,7 +33,15 @@ struct JoinSession: View {
                 URLSession.shared.dataTask(with: verifyRequest) { data, response, error in
                     guard let data = data else { return }
                     let resData = try! JSONDecoder().decode(VerifyResponse.self, from: data)
-                    session = SessionDetails(id: resData.sessionDetails.sessionId, localStatus: "ENTER_SESSION", sessionStatus: resData.sessionDetails.sessionStatus)
+                    if let sessionDetailObject = resData.sessionDetails {
+                        if let sessionId = sessionDetailObject.sessionId {
+                            if let sessionStatus = sessionDetailObject.sessionStatus {
+                                session = SessionDetails(id: sessionId, localStatus: "ENTER_SESSION", sessionStatus: sessionStatus, dispalyName: "")
+                            }
+                        }
+                    } else {
+                        isInputSubmissionInvalid = true
+                    }
                 }.resume()
             } else {
                 isInputSubmissionInvalid = true
@@ -98,6 +106,6 @@ struct JoinSession: View {
 
 struct JoinSession_Previews: PreviewProvider {
     static var previews: some View {
-        JoinSession(session: .constant(SessionDetails(id: "", localStatus: "", sessionStatus: "")))
+        JoinSession(session: .constant(SessionDetails(id: "", localStatus: "", sessionStatus: "", dispalyName: "")))
     }
 }
