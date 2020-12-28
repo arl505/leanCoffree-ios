@@ -2,19 +2,26 @@ import SwiftUI
 
 struct StateMachine: View {
     
-    @State private var state =  "WELCOME";
+    @State private var session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")
     
-    @State private var session = CurrentSession(id: "", status: "")
+    @State private var usersDetails = UsersMessage(moderator: nil, displayNames: nil)
+    
+    @State private var topicsDetails = AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)
+    
+    @State private var discussionVotesDetails = DiscussionVotesDetails(moreTimeVotesCount: 0, finishTopicVotesCount: 0)
     
     var body: some View {
-        if(state == "WELCOME") {
-            Welcome(state: $state)
-        } else if (state == "CREATE") {
-            CreateSession(state: $state, session: $session)
-        } else if (state == "JOIN") {
-            JoinSession(state: $state, session: $session)
-        } else if (state == "ENTER_SESSION") {
-            EnterSession(state: $state, session: $session)
+        if(session.localStatus == "WELCOME") {
+            Welcome(session: $session)
+        } else if (session.localStatus == "CREATE") {
+            CreateSession(session: $session)
+        } else if (session.localStatus == "JOIN") {
+            JoinSession(session: $session)
+        } else if (session.localStatus.contains("SESSION")) {
+            Session(session: $session,
+                    usersDetails: $usersDetails,
+                    topicsDetails: $topicsDetails,
+                    discussionVotesDetails: $discussionVotesDetails)
         } else {
             Text("To be programmed")
         }

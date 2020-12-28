@@ -4,8 +4,7 @@ struct JoinSession: View {
     
     @State private var input = ""
     @State private var isInputSubmissionInvalid = false
-    @Binding var state: String
-    @Binding var session: CurrentSession
+    @Binding var session: SessionDetails
     
     struct VerifyResponse: Decodable {
         let verificationStatus: String
@@ -17,7 +16,7 @@ struct JoinSession: View {
     }
     
     func goHome() {
-        state = "WELCOME"
+        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")
     }
     
     func submit() {
@@ -34,8 +33,7 @@ struct JoinSession: View {
                 URLSession.shared.dataTask(with: verifyRequest) { data, response, error in
                     guard let data = data else { return }
                     let resData = try! JSONDecoder().decode(VerifyResponse.self, from: data)
-                    session = CurrentSession(id: resData.sessionDetails.sessionId, status: resData.sessionDetails.sessionStatus)
-                    state = "ENTER_SESSION"
+                    session = SessionDetails(id: resData.sessionDetails.sessionId, localStatus: "ENTER_SESSION", sessionStatus: resData.sessionDetails.sessionStatus)
                 }.resume()
             } else {
                 isInputSubmissionInvalid = true
@@ -46,47 +44,60 @@ struct JoinSession: View {
     }
     
     var body: some View {
-        HStack {
-            Button(action: {self.goHome()}) {
-                Text("< Home")
-            }
-            .padding()
-            
-            Spacer()
-        }
-        
-        Text("Enter session link or ID below")
-            .font(.title)
-            .padding(.bottom)
-        Text("Don't have one? Return to the home screen and create a session!")
-            .font(.headline)
-        
-        Spacer()
-        
-        TextField("Link or Session ID", text: $input)
-            .padding()
+        Color(red: 0.13, green: 0.16, blue: 0.19)
+            .ignoresSafeArea()
             .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.black, lineWidth: 3))
-            .padding()
-        
-        Button(action: {self.submit()}) {
-            Text("Submit")
-                .padding()
-        }
-        .overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.black, lineWidth: 3))
-        .alert(isPresented: $isInputSubmissionInvalid) {
-            Alert(title: Text("Invalid entry"), message: Text("Submission did not contain valid session"), dismissButton: .default(Text("OK")))
-        }
-        
-        Spacer()
+                VStack {
+                    HStack {
+                        Button(action: {self.goHome()}) {
+                            Text("< Home")
+                                .foregroundColor(Color.white)
+                        }
+                        .padding()
+                        
+                        Spacer()
+                    }
+                    
+                    Text("Enter session link or ID below")
+                        .font(.title)
+                        .padding(.bottom)
+                        .foregroundColor(Color.white)
+                    Text("Don't have one? Return to the home screen and create a session!")
+                        .font(.headline)
+                        .foregroundColor(Color.white)
+                    
+                    Spacer()
+                    
+                    ZStack(alignment: .leading) {
+                        if input.isEmpty { Text("Link or Session ID").foregroundColor(.white).padding().padding() }
+                        TextField("", text: $input)
+                            .padding()
+                            .foregroundColor(Color.white)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.white, lineWidth: 3))
+                            .padding()
+                    }
+                    
+                    Button(action: {self.submit()}) {
+                        Text("Submit")
+                            .padding()
+                            .foregroundColor(Color.white)
+                    }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.white, lineWidth: 3))
+                    .alert(isPresented: $isInputSubmissionInvalid) {
+                        Alert(title: Text("Invalid entry"), message: Text("Submission did not contain valid session"), dismissButton: .default(Text("OK")))
+                    }
+                    
+                    Spacer()
+                })
     }
 }
 
 struct JoinSession_Previews: PreviewProvider {
     static var previews: some View {
-        JoinSession(state: .constant("JOIN"), session: .constant(CurrentSession(id: "", status: "")))
+        JoinSession(session: .constant(SessionDetails(id: "", localStatus: "", sessionStatus: "")))
     }
 }

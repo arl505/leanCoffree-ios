@@ -2,10 +2,10 @@ import SwiftUI
 
 struct Welcome: View {
     
-    @Binding var state: String
+    @Binding var session: SessionDetails
     
-    func doThing(_ action: String) {
-        state = action
+    func setState(_ action: String) {
+        session.localStatus = action
     }
     
     var body: some View {
@@ -20,7 +20,7 @@ struct Welcome: View {
                     
                     Spacer()
                     
-                    Button(action: {self.doThing("CREATE")}) {
+                    Button(action: {self.setState("CREATE")}) {
                         Text("Create a new Lean Coffree session")
                             .foregroundColor(.white)
                             .padding()
@@ -30,7 +30,7 @@ struct Welcome: View {
                             .stroke(Color.white, lineWidth: 3))
                     .padding(.bottom)
                     
-                    Button(action: {self.doThing("JOIN")}) {
+                    Button(action: {self.setState("JOIN")}) {
                         Text("Join a Lean Coffree session")
                             .foregroundColor(.white)
                             .padding()
@@ -46,6 +46,6 @@ struct Welcome: View {
 
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
-        Welcome(state: .constant("WELCOME"))
+        Welcome(session: .constant(SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")))
     }
 }

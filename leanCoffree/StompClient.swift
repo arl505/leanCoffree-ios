@@ -1,51 +1,48 @@
 import Foundation
 import StompClientLib
+import SwiftUI
 
 class StompClient: StompClientLibDelegate {
     
+    @Binding var session: SessionDetails
+    @Binding var usersDetails: UsersMessage
+    @Binding var topicsDetails: AllTopicsMessage
+    @Binding var discussionVotesDetails: DiscussionVotesDetails
+    
     private var socketClient = StompClientLib()
-    private var sessionId: String
     
-    struct UsersMessage: Decodable {
-        let moderator, displayNames: [String]
+    struct RefreshUsersResponse: Decodable {
+        let status, error: String?
     }
     
-    struct TopicsMessage: Decodable {
-        let currentDiscussionItem: CurrentDiscussionItem
-        let discussionBacklogTopics: [DiscussionBacklogTopics]
-        let discussedTopics: [DiscussedTopics]
-    }
-    
-    struct CurrentDiscussionItem: Decodable {
-        let voters: [String]?
-        let endTime, authorDisplayName: String?
-    }
-    
-    struct DiscussionBacklogTopics: Decodable {
-        let voters: [String]?
-        let text, authorDisplayName: String?
-    }
-    
-    struct DiscussedTopics: Decodable {
-        let voters: [String]?
-        let text, authorDisplayName, finishedAt: String?
-    }
-    
-    struct DiscussionVotes: Decodable {
-        let moreTimeVotesCount, finishTopicVotesCount: Int
-    }
-    
-    init(_ sessionId: String) {
-        self.sessionId = sessionId
+    init(session: Binding<SessionDetails>,
+         usersDetails: Binding<UsersMessage>,
+         topicsDetails: Binding<AllTopicsMessage>,
+         discussionVotesDetails: Binding<DiscussionVotesDetails>) {
+        _session = session
+        _usersDetails = usersDetails
+        _topicsDetails = topicsDetails
+        _discussionVotesDetails = discussionVotesDetails
         let url = NSURL(string: "wss://leancoffree.com:8085/lean-coffree/websocket")!
         socketClient.openSocketWithURLRequest(request: NSURLRequest(url: url as URL) , delegate: self)
     }
     
     func stompClientDidConnect(client: StompClientLib!) {
-        print("Subscribing for session id " + sessionId)
-        socketClient.subscribe(destination: "/topic/users/session/" + sessionId)
-        socketClient.subscribe(destination: "/topic/discussion-topics/session/" + sessionId)
-        socketClient.subscribe(destination: "/topic/discussion-votes/session/" + sessionId)
+        print("Subscribing for session id " + session.id)
+        socketClient.subscribe(destination: "/topic/users/session/" + session.id)
+        socketClient.subscribe(destination: "/topic/discussion-topics/session/" + session.id)
+        socketClient.subscribe(destination: "/topic/discussion-votes/session/" + session.id)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            let url = "https://leancoffree.com:8085" + "/refresh-users/\(self.session.id)"
+            let createUrl = URL(string: url)!
+            var createRequest = URLRequest(url: createUrl)
+            createRequest.httpMethod = "GET"
+            URLSession.shared.dataTask(with: createRequest) { data, response, error in
+                guard data != nil else { return }
+                self.session.localStatus = "SESSION"
+            }.resume()
+        }
     }
     
     func stompClientDidDisconnect(client: StompClientLib!) {
@@ -55,11 +52,11 @@ class StompClient: StompClientLibDelegate {
     func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
         print("Topic \(destination) received the following message: " + stringBody!)
         if (destination.contains("users")) {
-            let message = try! JSONDecoder().decode(UsersMessage.self, from: Data(stringBody!.utf8))
+            usersDetails = try! JSONDecoder().decode(UsersMessage.self, from: Data(stringBody!.utf8))
         } else if (destination.contains("discussion-topics")) {
-            let message = try! JSONDecoder().decode(TopicsMessage.self, from: Data(stringBody!.utf8))
+            topicsDetails = try! JSONDecoder().decode(AllTopicsMessage.self, from: Data(stringBody!.utf8))
         } else if (destination.contains("discussion-votes")) {
-            let message = try! JSONDecoder().decode(DiscussionVotes.self, from: Data(stringBody!.utf8))
+            discussionVotesDetails = try! JSONDecoder().decode(DiscussionVotesDetails.self, from: Data(stringBody!.utf8))
         }
     }
     

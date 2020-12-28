@@ -13,10 +13,13 @@
 		7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F19C2597ECDF0092F739 /* StateMachine.swift */; };
 		7047F1A82597EEB20092F739 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1A72597EEB20092F739 /* Welcome.swift */; };
 		7047F1BF25980E980092F739 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1BE25980E980092F739 /* CreateSession.swift */; };
-		7047F1C425981CBB0092F739 /* EnterSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* EnterSession.swift */; };
-		7047F1C925981F260092F739 /* CurrentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C825981F260092F739 /* CurrentSession.swift */; };
+		7047F1C425981CBB0092F739 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* Session.swift */; };
+		7047F1C925981F260092F739 /* SessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C825981F260092F739 /* SessionDetails.swift */; };
 		7047F1D1259824210092F739 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1D0259824210092F739 /* JoinSession.swift */; };
 		70ABC2BE259846410019957E /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABC2BD259846410019957E /* StompClient.swift */; };
+		70B74B4525996C210066D86F /* TopicsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B4425996C210066D86F /* TopicsDetails.swift */; };
+		70B74B4A2599971A0066D86F /* UsersMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B492599971A0066D86F /* UsersMessage.swift */; };
+		70B74B4F259999AB0066D86F /* DiscussionVotesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B4E259999AB0066D86F /* DiscussionVotesDetails.swift */; };
 		B492BC5D64C016848C8DD17F /* libPods-leanCoffree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */; };
 /* End PBXBuildFile section */
 
@@ -50,10 +53,13 @@
 		7047F19C2597ECDF0092F739 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		7047F1A72597EEB20092F739 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		7047F1BE25980E980092F739 /* CreateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
-		7047F1C325981CBB0092F739 /* EnterSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterSession.swift; sourceTree = "<group>"; };
-		7047F1C825981F260092F739 /* CurrentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSession.swift; sourceTree = "<group>"; };
+		7047F1C325981CBB0092F739 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7047F1C825981F260092F739 /* SessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetails.swift; sourceTree = "<group>"; };
 		7047F1D0259824210092F739 /* JoinSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
 		70ABC2BD259846410019957E /* StompClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClient.swift; sourceTree = "<group>"; };
+		70B74B4425996C210066D86F /* TopicsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsDetails.swift; sourceTree = "<group>"; };
+		70B74B492599971A0066D86F /* UsersMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMessage.swift; sourceTree = "<group>"; };
+		70B74B4E259999AB0066D86F /* DiscussionVotesDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionVotesDetails.swift; sourceTree = "<group>"; };
 		C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-leanCoffree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,12 +126,15 @@
 				7047F1A72597EEB20092F739 /* Welcome.swift */,
 				7047F1BE25980E980092F739 /* CreateSession.swift */,
 				7047F1D0259824210092F739 /* JoinSession.swift */,
-				7047F1C325981CBB0092F739 /* EnterSession.swift */,
+				7047F1C325981CBB0092F739 /* Session.swift */,
 				7047F1742597EB870092F739 /* Info.plist */,
 				7047F16F2597EB870092F739 /* Assets.xcassets */,
-				7047F1C825981F260092F739 /* CurrentSession.swift */,
+				7047F1C825981F260092F739 /* SessionDetails.swift */,
 				7047F1712597EB870092F739 /* Preview Content */,
 				70ABC2BD259846410019957E /* StompClient.swift */,
+				70B74B4425996C210066D86F /* TopicsDetails.swift */,
+				70B74B492599971A0066D86F /* UsersMessage.swift */,
+				70B74B4E259999AB0066D86F /* DiscussionVotesDetails.swift */,
 			);
 			path = leanCoffree;
 			sourceTree = "<group>";
@@ -303,10 +312,13 @@
 			files = (
 				7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */,
 				7047F1A82597EEB20092F739 /* Welcome.swift in Sources */,
-				7047F1C925981F260092F739 /* CurrentSession.swift in Sources */,
-				7047F1C425981CBB0092F739 /* EnterSession.swift in Sources */,
+				7047F1C925981F260092F739 /* SessionDetails.swift in Sources */,
+				7047F1C425981CBB0092F739 /* Session.swift in Sources */,
+				70B74B4A2599971A0066D86F /* UsersMessage.swift in Sources */,
 				7047F1BF25980E980092F739 /* CreateSession.swift in Sources */,
 				7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */,
+				70B74B4F259999AB0066D86F /* DiscussionVotesDetails.swift in Sources */,
+				70B74B4525996C210066D86F /* TopicsDetails.swift in Sources */,
 				70ABC2BE259846410019957E /* StompClient.swift in Sources */,
 				7047F1D1259824210092F739 /* JoinSession.swift in Sources */,
 			);

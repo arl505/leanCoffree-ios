@@ -2,11 +2,9 @@ import SwiftUI
 
 struct CreateSession: View {
     
-    @Binding var state: String
-    @Binding var session: CurrentSession
+    @Binding var session: SessionDetails
     
-    init(state: Binding<String>, session: Binding<CurrentSession>) {
-        self._state = state
+    init(session: Binding<SessionDetails>) {
         self._session = session
         createSession()
     }
@@ -40,39 +38,36 @@ struct CreateSession: View {
             URLSession.shared.dataTask(with: verifyRequest) { data, response, error in
                 guard let data = data else { return }
                 let resData = try! JSONDecoder().decode(VerifyResponse.self, from: data)
-                session = CurrentSession(id: resData.sessionDetails.sessionId, status: resData.sessionDetails.sessionStatus)
-                state = "ENTER_SESSION"
+                session = SessionDetails(id: resData.sessionDetails.sessionId, localStatus: "ENTER_SESSION", sessionStatus: resData.sessionDetails.sessionStatus)
             }.resume()
         }.resume()
     }
     
     func goHome() {
-        state = "WELCOME"
+        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "")
     }
     
     var body: some View {
-        
-        HStack {
-            Button(action: {self.goHome()}) {
-                Text("< Home")
-            }
-            .padding()
-            
-            Spacer()
-        }
-        
-        Spacer()
-        
-        Text("Creating session...")
-        
-        Spacer()
+        Color(red: 0.13, green: 0.16, blue: 0.19)
+            .ignoresSafeArea()
+            .overlay(
+                VStack {
+                    Spacer()
+                    
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                    Text("\nEntering session...")
+                        .foregroundColor(Color.white)
+                    
+                    Spacer()
+                })
     }
 }
 
 struct CreateSession_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CreateSession(state: .constant("CREATE"), session: .constant(CurrentSession(id: "", status: "")))
+            CreateSession(session: .constant(SessionDetails(id: "", localStatus: "", sessionStatus: "")))
         }
     }
 }
