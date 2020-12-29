@@ -43,7 +43,7 @@ struct SessionManager: View {
                                 Text("Votes Left: " + String(session.votesLeft))
                                     .foregroundColor(Color.white)
                             }
-                            DiscussionBacklog(session: session, topicsDetails: $topicsDetails)
+                            DiscussionBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails)
                             
                             Spacer()
                         }

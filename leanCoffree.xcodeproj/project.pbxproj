@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */; };
+		70125F9E259AD8250050DB25 /* TopicDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */; };
 		7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F16B2597EB840092F739 /* leanCoffreeApp.swift */; };
 		7047F1702597EB870092F739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F16F2597EB870092F739 /* Assets.xcassets */; };
 		7047F1732597EB870092F739 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F1722597EB870092F739 /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicVotingButton.swift; sourceTree = "<group>"; };
+		70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDeleteButton.swift; sourceTree = "<group>"; };
 		7047F1682597EB840092F739 /* leanCoffree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leanCoffree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F16B2597EB840092F739 /* leanCoffreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leanCoffreeApp.swift; sourceTree = "<group>"; };
 		7047F16F2597EB870092F739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,11 +137,12 @@
 				70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */,
 				70605D812599BF880011CFF0 /* ComposeTopic.swift */,
 				70B74B682599A9300066D86F /* DiscussionBacklog.swift */,
+				70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */,
+				70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */,
 				7047F1742597EB870092F739 /* Info.plist */,
 				70CB502D259A6D0D007D6ABB /* StompClientLib.swift */,
 				7047F16F2597EB870092F739 /* Assets.xcassets */,
 				7047F1712597EB870092F739 /* Preview Content */,
-				70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */,
 			);
 			path = leanCoffree;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				7047F1A82597EEB20092F739 /* Welcome.swift in Sources */,
 				7047F1C425981CBB0092F739 /* SessionManager.swift in Sources */,
 				70F9A34C259A9F6300876588 /* DisplayNamePrompt.swift in Sources */,
+				70125F9E259AD8250050DB25 /* TopicDeleteButton.swift in Sources */,
 				7047F1BF25980E980092F739 /* CreateSession.swift in Sources */,
 				7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */,
 				70F9A33C259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift in Sources */,
