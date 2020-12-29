@@ -24,8 +24,8 @@ struct SessionManager: View {
         UIScrollView.appearance().keyboardDismissMode = .onDrag
     }
     
-    func goHome() {
-        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")
+    func setStatus(_ status: String) {
+        session = SessionDetails(id: session.id, localStatus: status, sessionStatus: session.sessionStatus, dispalyName: session.dispalyName, votesLeft: session.votesLeft)
     }
     
     var body: some View {
@@ -37,6 +37,23 @@ struct SessionManager: View {
                 .overlay(
                     ScrollView {
                         VStack {
+                            HStack {
+                                Button(action: {self.setStatus("WELCOME")}) {
+                                    Text("< Home")
+                                        .foregroundColor(Color.white)
+                                }
+                                .padding()
+                                
+                                Spacer()
+                                
+                                Button(action: {self.setStatus("SESSION_USERS")}) {
+                                    Image("group")
+                                        .resizable()
+                                        .frame(width: 45, height: 45)
+                                }
+                                .padding()
+                            }
+                        
                             ComposeTopic(session: session)
                             
                             if(session.votesLeft != -1) {
@@ -55,6 +72,12 @@ struct SessionManager: View {
                 .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                     stompClient.reconnect()
                 }
+        } else if (session.localStatus == "SESSION_USERS") {
+            Color(red: 0.13, green: 0.16, blue: 0.19)
+                .ignoresSafeArea()
+                .overlay(
+                    UsersList(session: $session, usersDetails: $usersDetails)
+                )
         }
     }
 }

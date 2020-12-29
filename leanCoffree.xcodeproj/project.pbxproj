@@ -19,6 +19,7 @@
 		7047F1D1259824210092F739 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1D0259824210092F739 /* JoinSession.swift */; };
 		70605D822599BF880011CFF0 /* ComposeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70605D812599BF880011CFF0 /* ComposeTopic.swift */; };
 		70ABC2BE259846410019957E /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABC2BD259846410019957E /* StompClient.swift */; };
+		70AC774A259BBBB00049A544 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC7749259BBBB00049A544 /* UsersList.swift */; };
 		70B74B692599A9300066D86F /* DiscussionBacklog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B682599A9300066D86F /* DiscussionBacklog.swift */; };
 		70CB502E259A6D0D007D6ABB /* StompClientLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB502D259A6D0D007D6ABB /* StompClientLib.swift */; };
 		70F9A33B259A99DC00876588 /* UsersMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A336259A99DC00876588 /* UsersMessage.swift */; };
@@ -64,6 +65,7 @@
 		7047F1D0259824210092F739 /* JoinSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
 		70605D812599BF880011CFF0 /* ComposeTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTopic.swift; sourceTree = "<group>"; };
 		70ABC2BD259846410019957E /* StompClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClient.swift; sourceTree = "<group>"; };
+		70AC7749259BBBB00049A544 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
 		70B74B682599A9300066D86F /* DiscussionBacklog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionBacklog.swift; sourceTree = "<group>"; };
 		70CB502D259A6D0D007D6ABB /* StompClientLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClientLib.swift; sourceTree = "<group>"; };
 		70F9A336259A99DC00876588 /* UsersMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersMessage.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				70CB502D259A6D0D007D6ABB /* StompClientLib.swift */,
 				7047F16F2597EB870092F739 /* Assets.xcassets */,
 				7047F1712597EB870092F739 /* Preview Content */,
+				70AC7749259BBBB00049A544 /* UsersList.swift */,
 			);
 			path = leanCoffree;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70AC774A259BBBB00049A544 /* UsersList.swift in Sources */,
 				7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */,
 				70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */,
 				70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */,
