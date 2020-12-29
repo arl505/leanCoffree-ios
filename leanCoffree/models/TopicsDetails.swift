@@ -8,7 +8,7 @@ struct AllTopicsMessage: Decodable {
 
 struct CurrentDiscussionItem: Decodable {
     let voters: [String]?
-    let endTime, authorDisplayName: String?
+    let endTime, authorDisplayName, text: String?
 }
 
 struct DiscussionBacklogTopics: Decodable {
