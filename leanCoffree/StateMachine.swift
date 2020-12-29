@@ -18,12 +18,10 @@ struct StateMachine: View {
         } else if (session.localStatus == "JOIN") {
             JoinSession(session: $session)
         } else if (session.localStatus.contains("SESSION")) {
-            Session(session: $session,
+            SessionManager(session: $session,
                     usersDetails: $usersDetails,
                     topicsDetails: $topicsDetails,
                     discussionVotesDetails: $discussionVotesDetails)
-        } else {
-            Text("To be programmed")
         }
     }
 }

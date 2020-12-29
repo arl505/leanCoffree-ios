@@ -2,7 +2,7 @@ import Foundation
 
 struct AllTopicsMessage: Decodable {
     let currentDiscussionItem: CurrentDiscussionItem?
-    let discussionBacklogTopics: [DiscussionBacklogTopics]?
+    var discussionBacklogTopics: [DiscussionBacklogTopics]?
     let discussedTopics: [DiscussedTopics]?
 }
 

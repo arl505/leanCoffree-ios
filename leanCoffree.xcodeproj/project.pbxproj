@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */; };
 		7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F16B2597EB840092F739 /* leanCoffreeApp.swift */; };
 		7047F1702597EB870092F739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F16F2597EB870092F739 /* Assets.xcassets */; };
 		7047F1732597EB870092F739 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F1722597EB870092F739 /* Preview Assets.xcassets */; };
 		7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F19C2597ECDF0092F739 /* StateMachine.swift */; };
 		7047F1A82597EEB20092F739 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1A72597EEB20092F739 /* Welcome.swift */; };
 		7047F1BF25980E980092F739 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1BE25980E980092F739 /* CreateSession.swift */; };
-		7047F1C425981CBB0092F739 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* Session.swift */; };
-		7047F1C925981F260092F739 /* SessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C825981F260092F739 /* SessionDetails.swift */; };
+		7047F1C425981CBB0092F739 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* SessionManager.swift */; };
 		7047F1D1259824210092F739 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1D0259824210092F739 /* JoinSession.swift */; };
 		70605D822599BF880011CFF0 /* ComposeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70605D812599BF880011CFF0 /* ComposeTopic.swift */; };
 		70ABC2BE259846410019957E /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABC2BD259846410019957E /* StompClient.swift */; };
-		70B74B4525996C210066D86F /* TopicsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B4425996C210066D86F /* TopicsDetails.swift */; };
-		70B74B4A2599971A0066D86F /* UsersMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B492599971A0066D86F /* UsersMessage.swift */; };
-		70B74B4F259999AB0066D86F /* DiscussionVotesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B4E259999AB0066D86F /* DiscussionVotesDetails.swift */; };
 		70B74B692599A9300066D86F /* DiscussionBacklog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B682599A9300066D86F /* DiscussionBacklog.swift */; };
-		B492BC5D64C016848C8DD17F /* libPods-leanCoffree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */; };
+		70CB502E259A6D0D007D6ABB /* StompClientLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB502D259A6D0D007D6ABB /* StompClientLib.swift */; };
+		70F9A33B259A99DC00876588 /* UsersMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A336259A99DC00876588 /* UsersMessage.swift */; };
+		70F9A33C259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */; };
+		70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A338259A99DC00876588 /* SessionDetails.swift */; };
+		70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A339259A99DC00876588 /* DiscussionVotesDetails.swift */; };
+		70F9A33F259A99DC00876588 /* TopicsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A33A259A99DC00876588 /* TopicsDetails.swift */; };
+		70F9A34C259A9F6300876588 /* DisplayNamePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */; };
+		BBDC428F599C5B5EEBF3CC86 /* libPods-leanCoffree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D444477ABD6340BC1E3E841F /* libPods-leanCoffree.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B343D3B26B32C14053F163F /* Pods-leanCoffree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.debug.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.debug.xcconfig"; sourceTree = "<group>"; };
-		1EC0C7905AE73CF2B4BFCF4F /* Pods-leanCoffree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.release.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.release.xcconfig"; sourceTree = "<group>"; };
+		70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicVotingButton.swift; sourceTree = "<group>"; };
 		7047F1682597EB840092F739 /* leanCoffree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leanCoffree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F16B2597EB840092F739 /* leanCoffreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leanCoffreeApp.swift; sourceTree = "<group>"; };
 		7047F16F2597EB870092F739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,16 +58,21 @@
 		7047F19C2597ECDF0092F739 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		7047F1A72597EEB20092F739 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		7047F1BE25980E980092F739 /* CreateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
-		7047F1C325981CBB0092F739 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		7047F1C825981F260092F739 /* SessionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetails.swift; sourceTree = "<group>"; };
+		7047F1C325981CBB0092F739 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		7047F1D0259824210092F739 /* JoinSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
 		70605D812599BF880011CFF0 /* ComposeTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTopic.swift; sourceTree = "<group>"; };
 		70ABC2BD259846410019957E /* StompClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClient.swift; sourceTree = "<group>"; };
-		70B74B4425996C210066D86F /* TopicsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsDetails.swift; sourceTree = "<group>"; };
-		70B74B492599971A0066D86F /* UsersMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersMessage.swift; sourceTree = "<group>"; };
-		70B74B4E259999AB0066D86F /* DiscussionVotesDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionVotesDetails.swift; sourceTree = "<group>"; };
 		70B74B682599A9300066D86F /* DiscussionBacklog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionBacklog.swift; sourceTree = "<group>"; };
-		C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-leanCoffree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70CB502D259A6D0D007D6ABB /* StompClientLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClientLib.swift; sourceTree = "<group>"; };
+		70F9A336259A99DC00876588 /* UsersMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersMessage.swift; sourceTree = "<group>"; };
+		70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessOrFailureAndErrorBody.swift; sourceTree = "<group>"; };
+		70F9A338259A99DC00876588 /* SessionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetails.swift; sourceTree = "<group>"; };
+		70F9A339259A99DC00876588 /* DiscussionVotesDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionVotesDetails.swift; sourceTree = "<group>"; };
+		70F9A33A259A99DC00876588 /* TopicsDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsDetails.swift; sourceTree = "<group>"; };
+		70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNamePrompt.swift; sourceTree = "<group>"; };
+		9D82686353480B3B6226BE52 /* Pods-leanCoffree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.release.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.release.xcconfig"; sourceTree = "<group>"; };
+		A19C37DBDA0EE0A871A4A116 /* Pods-leanCoffree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.debug.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.debug.xcconfig"; sourceTree = "<group>"; };
+		D444477ABD6340BC1E3E841F /* libPods-leanCoffree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-leanCoffree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B492BC5D64C016848C8DD17F /* libPods-leanCoffree.a in Frameworks */,
+				BBDC428F599C5B5EEBF3CC86 /* libPods-leanCoffree.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,22 +101,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BEB34703A7965715E090DDC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0B343D3B26B32C14053F163F /* Pods-leanCoffree.debug.xcconfig */,
-				1EC0C7905AE73CF2B4BFCF4F /* Pods-leanCoffree.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		7047F15F2597EB840092F739 = {
 			isa = PBXGroup;
 			children = (
 				7047F16A2597EB840092F739 /* leanCoffree */,
 				7047F1692597EB840092F739 /* Products */,
-				2BEB34703A7965715E090DDC /* Pods */,
-				7DD036C190FA0AEAA79A272B /* Frameworks */,
+				C1ECEC5D74B90A30DCFA1BDB /* Pods */,
+				E104210B28134330790AC656 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,22 +124,22 @@
 		7047F16A2597EB840092F739 /* leanCoffree */ = {
 			isa = PBXGroup;
 			children = (
+				70F9A335259A998E00876588 /* models */,
 				7047F16B2597EB840092F739 /* leanCoffreeApp.swift */,
 				7047F19C2597ECDF0092F739 /* StateMachine.swift */,
 				7047F1A72597EEB20092F739 /* Welcome.swift */,
 				7047F1BE25980E980092F739 /* CreateSession.swift */,
 				7047F1D0259824210092F739 /* JoinSession.swift */,
-				7047F1C325981CBB0092F739 /* Session.swift */,
-				7047F1742597EB870092F739 /* Info.plist */,
-				7047F16F2597EB870092F739 /* Assets.xcassets */,
-				7047F1C825981F260092F739 /* SessionDetails.swift */,
-				7047F1712597EB870092F739 /* Preview Content */,
+				7047F1C325981CBB0092F739 /* SessionManager.swift */,
 				70ABC2BD259846410019957E /* StompClient.swift */,
-				70B74B4425996C210066D86F /* TopicsDetails.swift */,
-				70B74B492599971A0066D86F /* UsersMessage.swift */,
-				70B74B4E259999AB0066D86F /* DiscussionVotesDetails.swift */,
-				70B74B682599A9300066D86F /* DiscussionBacklog.swift */,
+				70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */,
 				70605D812599BF880011CFF0 /* ComposeTopic.swift */,
+				70B74B682599A9300066D86F /* DiscussionBacklog.swift */,
+				7047F1742597EB870092F739 /* Info.plist */,
+				70CB502D259A6D0D007D6ABB /* StompClientLib.swift */,
+				7047F16F2597EB870092F739 /* Assets.xcassets */,
+				7047F1712597EB870092F739 /* Preview Content */,
+				70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */,
 			);
 			path = leanCoffree;
 			sourceTree = "<group>";
@@ -153,10 +152,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7DD036C190FA0AEAA79A272B /* Frameworks */ = {
+		70F9A335259A998E00876588 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				C3887B273B9FAB0FA1EB0107 /* libPods-leanCoffree.a */,
+				70F9A339259A99DC00876588 /* DiscussionVotesDetails.swift */,
+				70F9A338259A99DC00876588 /* SessionDetails.swift */,
+				70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */,
+				70F9A33A259A99DC00876588 /* TopicsDetails.swift */,
+				70F9A336259A99DC00876588 /* UsersMessage.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		C1ECEC5D74B90A30DCFA1BDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A19C37DBDA0EE0A871A4A116 /* Pods-leanCoffree.debug.xcconfig */,
+				9D82686353480B3B6226BE52 /* Pods-leanCoffree.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E104210B28134330790AC656 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D444477ABD6340BC1E3E841F /* libPods-leanCoffree.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,7 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7047F18D2597EB870092F739 /* Build configuration list for PBXNativeTarget "leanCoffree" */;
 			buildPhases = (
-				2A927FAB19FCED615B6DF924 /* [CP] Check Pods Manifest.lock */,
+				596B703418AE7FE57F0B0C29 /* [CP] Check Pods Manifest.lock */,
 				7047F1642597EB840092F739 /* Sources */,
 				7047F1652597EB840092F739 /* Frameworks */,
 				7047F1662597EB840092F739 /* Resources */,
@@ -287,7 +307,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A927FAB19FCED615B6DF924 /* [CP] Check Pods Manifest.lock */ = {
+		596B703418AE7FE57F0B0C29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -317,18 +337,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */,
+				70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */,
+				70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */,
+				70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */,
 				70B74B692599A9300066D86F /* DiscussionBacklog.swift in Sources */,
 				7047F1A82597EEB20092F739 /* Welcome.swift in Sources */,
-				7047F1C925981F260092F739 /* SessionDetails.swift in Sources */,
-				7047F1C425981CBB0092F739 /* Session.swift in Sources */,
-				70B74B4A2599971A0066D86F /* UsersMessage.swift in Sources */,
+				7047F1C425981CBB0092F739 /* SessionManager.swift in Sources */,
+				70F9A34C259A9F6300876588 /* DisplayNamePrompt.swift in Sources */,
 				7047F1BF25980E980092F739 /* CreateSession.swift in Sources */,
 				7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */,
+				70F9A33C259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift in Sources */,
+				70F9A33F259A99DC00876588 /* TopicsDetails.swift in Sources */,
+				70CB502E259A6D0D007D6ABB /* StompClientLib.swift in Sources */,
 				70605D822599BF880011CFF0 /* ComposeTopic.swift in Sources */,
-				70B74B4F259999AB0066D86F /* DiscussionVotesDetails.swift in Sources */,
-				70B74B4525996C210066D86F /* TopicsDetails.swift in Sources */,
 				70ABC2BE259846410019957E /* StompClient.swift in Sources */,
 				7047F1D1259824210092F739 /* JoinSession.swift in Sources */,
+				70F9A33B259A99DC00876588 /* UsersMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +504,7 @@
 		};
 		7047F18E2597EB870092F739 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B343D3B26B32C14053F163F /* Pods-leanCoffree.debug.xcconfig */;
+			baseConfigurationReference = A19C37DBDA0EE0A871A4A116 /* Pods-leanCoffree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -505,7 +529,7 @@
 		};
 		7047F18F2597EB870092F739 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EC0C7905AE73CF2B4BFCF4F /* Pods-leanCoffree.release.xcconfig */;
+			baseConfigurationReference = 9D82686353480B3B6226BE52 /* Pods-leanCoffree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

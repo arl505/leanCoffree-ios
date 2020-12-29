@@ -1,17 +1,36 @@
 import SwiftUI
 
 struct ComposeTopic: View {
-
+    
     @State private var topicSubmission = "Submit a discussion topic!"
+    var session: SessionDetails
     
     func submitTopic() {
-        print("Submitting topic")
+        if(topicSubmission.count > 0 && topicSubmission != "Submit a discussion topic!") {
+            UIApplication.shared.endEditing()
+            let url = URL(string: "https://leancoffree.com:8085" + "/submit-topic")!
+            var request = URLRequest(url: url)
+            let json: [String: Any] = ["sessionId": session.id, "submissionText": topicSubmission, "displayName": session.dispalyName]
+            let jsonData = try? JSONSerialization.data(withJSONObject: json)
+            request.httpBody = jsonData
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data else { return }
+                let resData = try! JSONDecoder().decode(SuccessOrFailureAndErrorBody.self, from: data)
+                if(resData.status == "SUCCESS") {
+                    topicSubmission = "Submit a discussion topic!"
+                }
+                
+            }.resume()
+        }
     }
     
-    init() {
+    init(session: SessionDetails) {
+        self.session = session
         UITextView.appearance().backgroundColor = .clear
     }
-
+    
     var body: some View {
         VStack {
             TextEditor(text: $topicSubmission)
@@ -60,6 +79,12 @@ struct ComposeTopic: View {
 
 struct ComposeTopic_Previews: PreviewProvider {
     static var previews: some View {
-        ComposeTopic()
+        ComposeTopic(session: SessionDetails(id: "123", localStatus: "SESSION", sessionStatus: "STARTED", dispalyName: "Alec"))
+    }
+}
+
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

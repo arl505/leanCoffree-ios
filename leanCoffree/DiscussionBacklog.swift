@@ -5,56 +5,43 @@ struct DiscussionBacklog: View {
     let session: SessionDetails
     @Binding var topicsDetails: AllTopicsMessage
     
-    func vote(command: String) {
-        print("HERE")
-    }
-    
     var body: some View {
         if let topics = topicsDetails.discussionBacklogTopics {
             if(!topics.isEmpty) {
                 ForEach(topics, id: \.text) { topic in
                     if let text = topic.text {
                         if let voters = topic.voters {
-                            VStack {
-                                Text(text)
-                                    .fixedSize(horizontal: false, vertical: true)
-                                    .foregroundColor(Color.white)
-                                    .padding()
-                                    .frame(minWidth: UIScreen.main.bounds.width * 0.95, alignment: .leading)
-                                
-                                HStack {
-                                    Text("Votes: " + String(voters.count))
-                                        .font(.subheadline)
+                            if let authorName = topic.authorDisplayName {
+                                VStack {
+                                    Text(text)
+                                        .fixedSize(horizontal: false, vertical: true)
                                         .foregroundColor(Color.white)
                                         .padding()
-                                        .frame(alignment: .leading)
+                                        .frame(minWidth: UIScreen.main.bounds.width * 0.95, alignment: .leading)
                                     
-                                    Spacer()
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(height: 2)
+                                        .edgesIgnoringSafeArea(.horizontal)
                                     
-                                    let buttonLabel = !voters.contains(session.dispalyName)
-                                        ? "Vote"
-                                        : "Un-Vote"
-                                        
-                                    let command = !voters.contains(session.dispalyName)
-                                        ? "CAST"
-                                        : "UNCAST"
-                                    
-                                    Button(action: {self.vote(command: command)}) {
-                                        Text(buttonLabel)
+                                    HStack {
+                                        Text("Votes: " + String(voters.count))
                                             .font(.subheadline)
                                             .foregroundColor(Color.white)
-                                            .padding()
+                                            .padding(.leading)
+                                            .padding(.bottom)
+                                            .frame(alignment: .leading)
+                                        
+                                        Spacer()
+                                        
+                                        TopicVotingButton(session: session, voters: voters, text: text, authorName: authorName)
                                     }
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .stroke(Color.white, lineWidth: 3))
-                                    .padding()
                                 }
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.white, lineWidth: 3))
+                                .padding()
                             }
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white, lineWidth: 3))
-                            .padding()
                         }
                     }
                 }
