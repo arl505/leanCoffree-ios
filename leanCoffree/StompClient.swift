@@ -63,8 +63,15 @@ class StompClient: StompClientLibDelegate {
                     }
                 }
                 session.votesLeft = 3 - count
-                topicsDetails = topics
             }
+            if let currentTopic = topics.currentDiscussionItem {
+                if currentTopic.text != nil {
+                    if (session.sessionStatus != "DISCUSSING") {
+                        session.sessionStatus = "DISCUSSING"
+                    }
+                }
+            }
+            topicsDetails = topics
         } else if (destination.contains("discussion-votes")) {
             discussionVotesDetails = try! JSONDecoder().decode(DiscussionVotesDetails.self, from: Data(stringBody!.utf8))
         }

@@ -32,7 +32,7 @@ struct SessionManager: View {
             guard let data = data else { return }
             let resData = try! JSONDecoder().decode(SuccessOrFailureAndErrorBody.self, from: data)
             if (resData.status == "SUCCESS") {
-            setStatus("SESSION", "DISCUSSING")
+                setStatus("SESSION", "DISCUSSING")
             }
         }.resume()
     }
@@ -66,24 +66,27 @@ struct SessionManager: View {
                                 }
                                 .padding()
                             }
+                            .frame(maxWidth: UIScreen.main.bounds.width)
                             
                             if let backlog = topicsDetails.discussionBacklogTopics {
-                                if backlog.count > 1 {
-                                    Button(action: {self.nextSection()}) {
-                                        Text("Start Discussion")
-                                            .foregroundColor(Color.white)
-                                            .padding()
-                                            .frame(minWidth: UIScreen.main.bounds.width * 0.95)
+                                if let moderators = usersDetails.moderator {
+                                    if (backlog.count > 1 && moderators.contains(session.dispalyName)) {
+                                        Button(action: {self.nextSection()}) {
+                                            Text("Start Discussion")
+                                                .foregroundColor(Color.white)
+                                                .padding()
+                                                .frame(minWidth: UIScreen.main.bounds.width * 0.95)
+                                        }
+                                        .background(Color(red: 0.13 * 0.75, green: 0.16 * 0.75, blue: 0.19 * 0.75))
+                                        .cornerRadius(20)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(Color.white, lineWidth: 3)
+                                        )
                                     }
-                                    .background(Color(red: 0.13 * 0.75, green: 0.16 * 0.75, blue: 0.19 * 0.75))
-                                    .cornerRadius(20)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .stroke(Color.white, lineWidth: 3)
-                                    )
                                 }
                             }
-                        
+                            
                             ComposeTopic(session: session)
                             
                             if(session.votesLeft != -1) {

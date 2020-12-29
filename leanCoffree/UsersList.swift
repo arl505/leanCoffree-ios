@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct UsersList: View {
-
+    
     @Binding var session: SessionDetails
     @Binding var usersDetails: UsersMessage
     
@@ -18,10 +18,18 @@ struct UsersList: View {
             .padding()
             
             Spacer()
+            
+            Button(action: {}) {
+                Image("group")
+                    .resizable()
+                    .frame(width: 45, height: 45)
+            }
+            .padding()
+            .hidden()
         }
         
         Spacer()
-    
+        
         if let users = usersDetails.displayNames {
             ForEach(users, id: \.self) { value in
                 Text(value)

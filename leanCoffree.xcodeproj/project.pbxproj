@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		700F60DB259BC35000AFC5E2 /* SessionDiscussionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F60DA259BC35000AFC5E2 /* SessionDiscussionManager.swift */; };
+		700F60E9259BE0EE00AFC5E2 /* CurrentDiscussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F60E8259BE0EE00AFC5E2 /* CurrentDiscussionView.swift */; };
 		70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */; };
 		70125F9E259AD8250050DB25 /* TopicDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */; };
 		7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F16B2597EB840092F739 /* leanCoffreeApp.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		700F60DA259BC35000AFC5E2 /* SessionDiscussionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDiscussionManager.swift; sourceTree = "<group>"; };
+		700F60E8259BE0EE00AFC5E2 /* CurrentDiscussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDiscussionView.swift; sourceTree = "<group>"; };
 		70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicVotingButton.swift; sourceTree = "<group>"; };
 		70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDeleteButton.swift; sourceTree = "<group>"; };
 		7047F1682597EB840092F739 /* leanCoffree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leanCoffree.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */,
 				70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */,
 				700F60DA259BC35000AFC5E2 /* SessionDiscussionManager.swift */,
+				700F60E8259BE0EE00AFC5E2 /* CurrentDiscussionView.swift */,
 				7047F1742597EB870092F739 /* Info.plist */,
 				70CB502D259A6D0D007D6ABB /* StompClientLib.swift */,
 				7047F16F2597EB870092F739 /* Assets.xcassets */,
@@ -351,6 +354,7 @@
 				70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */,
 				70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */,
 				70B74B692599A9300066D86F /* DiscussionBacklog.swift in Sources */,
+				700F60E9259BE0EE00AFC5E2 /* CurrentDiscussionView.swift in Sources */,
 				7047F1A82597EEB20092F739 /* Welcome.swift in Sources */,
 				7047F1C425981CBB0092F739 /* SessionManager.swift in Sources */,
 				700F60DB259BC35000AFC5E2 /* SessionDiscussionManager.swift in Sources */,
