@@ -58,7 +58,7 @@ struct StartedBacklog: View {
 struct StartedBacklog_Previews: PreviewProvider {
     static var previews: some View {
         StartedBacklog(session: SessionDetails(id: "", localStatus: "", sessionStatus: "", dispalyName: ""),
-                          topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)),
-                          usersDetails: .constant(UsersMessage(moderator: [], displayNames: [])))
+                       topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)),
+                       usersDetails: .constant(UsersMessage(moderator: [], displayNames: [])))
     }
 }

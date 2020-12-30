@@ -25,6 +25,8 @@
 		70D2C819259C0E8A0081C2B3 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C817259C0E8A0081C2B3 /* UsersList.swift */; };
 		70D2C81F259C0E9E0081C2B3 /* CurrentTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C81E259C0E9E0081C2B3 /* CurrentTopic.swift */; };
 		70D2C824259C0EB10081C2B3 /* DiscussionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C823259C0EB10081C2B3 /* DiscussionManager.swift */; };
+		70D2C838259C2E240081C2B3 /* DiscussionVoting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C837259C2E240081C2B3 /* DiscussionVoting.swift */; };
+		70D2C842259C3AE40081C2B3 /* ModeratorFinalSay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C841259C3AE40081C2B3 /* ModeratorFinalSay.swift */; };
 		70F9A33B259A99DC00876588 /* UsersMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A336259A99DC00876588 /* UsersMessage.swift */; };
 		70F9A33C259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */; };
 		70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A338259A99DC00876588 /* SessionDetails.swift */; };
@@ -73,6 +75,8 @@
 		70D2C817259C0E8A0081C2B3 /* UsersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
 		70D2C81E259C0E9E0081C2B3 /* CurrentTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTopic.swift; sourceTree = "<group>"; };
 		70D2C823259C0EB10081C2B3 /* DiscussionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionManager.swift; sourceTree = "<group>"; };
+		70D2C837259C2E240081C2B3 /* DiscussionVoting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionVoting.swift; sourceTree = "<group>"; };
+		70D2C841259C3AE40081C2B3 /* ModeratorFinalSay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeratorFinalSay.swift; sourceTree = "<group>"; };
 		70F9A336259A99DC00876588 /* UsersMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersMessage.swift; sourceTree = "<group>"; };
 		70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessOrFailureAndErrorBody.swift; sourceTree = "<group>"; };
 		70F9A338259A99DC00876588 /* SessionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetails.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 			children = (
 				70D2C823259C0EB10081C2B3 /* DiscussionManager.swift */,
 				70D2C81E259C0E9E0081C2B3 /* CurrentTopic.swift */,
+				70D2C837259C2E240081C2B3 /* DiscussionVoting.swift */,
+				70D2C841259C3AE40081C2B3 /* ModeratorFinalSay.swift */,
 			);
 			path = discussing;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D2C838259C2E240081C2B3 /* DiscussionVoting.swift in Sources */,
 				70D2C819259C0E8A0081C2B3 /* UsersList.swift in Sources */,
 				70D2C7FF259C0E040081C2B3 /* TopicDeleteButton.swift in Sources */,
 				70D2C812259C0E7F0081C2B3 /* JoinSession.swift in Sources */,
@@ -395,6 +402,7 @@
 				70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */,
 				70D2C808259C0E190081C2B3 /* StompClient.swift in Sources */,
 				70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */,
+				70D2C842259C3AE40081C2B3 /* ModeratorFinalSay.swift in Sources */,
 				70D2C801259C0E040081C2B3 /* TopicVotingButton.swift in Sources */,
 				70D2C81F259C0E9E0081C2B3 /* CurrentTopic.swift in Sources */,
 				70D2C824259C0EB10081C2B3 /* DiscussionManager.swift in Sources */,

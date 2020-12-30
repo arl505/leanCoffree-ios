@@ -6,6 +6,7 @@ struct SessionManager: View {
     @Binding var usersDetails: UsersMessage
     @Binding var topicsDetails: AllTopicsMessage
     @Binding var discussionVotesDetails: DiscussionVotesDetails
+    @State var timerString = "3:00"
     
     var stompClient: StompClient;
     
@@ -113,7 +114,8 @@ struct SessionManager: View {
                     DiscussionManager(session: $session,
                                              usersDetails: $usersDetails,
                                              topicsDetails: $topicsDetails,
-                                             discussionVotesDetails: $discussionVotesDetails)
+                                             discussionVotesDetails: $discussionVotesDetails,
+                                             timerString: $timerString)
                 )
         } else if (session.localStatus == "SESSION_USERS") {
             Color(red: 0.13, green: 0.16, blue: 0.19)
