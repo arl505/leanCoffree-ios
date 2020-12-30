@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DiscussionBacklog: View {
+struct StartedBacklog: View {
     
     let session: SessionDetails
     @Binding var topicsDetails: AllTopicsMessage
@@ -55,9 +55,9 @@ struct DiscussionBacklog: View {
     }
 }
 
-struct DiscussionBacklog_Previews: PreviewProvider {
+struct StartedBacklog_Previews: PreviewProvider {
     static var previews: some View {
-        DiscussionBacklog(session: SessionDetails(id: "", localStatus: "", sessionStatus: "", dispalyName: ""),
+        StartedBacklog(session: SessionDetails(id: "", localStatus: "", sessionStatus: "", dispalyName: ""),
                           topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)),
                           usersDetails: .constant(UsersMessage(moderator: [], displayNames: [])))
     }

@@ -94,7 +94,7 @@ struct SessionManager: View {
                                     .foregroundColor(Color.white)
                             }
                             
-                            DiscussionBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails)
+                            StartedBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails)
                             
                             Spacer()
                         }
@@ -110,7 +110,7 @@ struct SessionManager: View {
             Color(red: 0.13, green: 0.16, blue: 0.19)
                 .ignoresSafeArea()
                 .overlay(
-                    SessionDiscussionManager(session: $session,
+                    DiscussionManager(session: $session,
                                              usersDetails: $usersDetails,
                                              topicsDetails: $topicsDetails,
                                              discussionVotesDetails: $discussionVotesDetails)

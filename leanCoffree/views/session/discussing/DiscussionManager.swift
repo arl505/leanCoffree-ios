@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SessionDiscussionManager: View {
+struct DiscussionManager: View {
     
     @Binding var session: SessionDetails
     @Binding var usersDetails: UsersMessage
@@ -41,7 +41,7 @@ struct SessionDiscussionManager: View {
                     }
                     .tag("backlog")
                 
-                CurrentDiscussionView(topicsDetails: $topicsDetails)
+                CurrentTopic(topicsDetails: $topicsDetails)
                     .onTapGesture {
                         selectedTab = "current"
                     }
@@ -66,9 +66,9 @@ struct SessionDiscussionManager: View {
     }
 }
 
-struct SessionDiscussionManager_Previews: PreviewProvider {
+struct DiscussionManager_Previews: PreviewProvider {
     static var previews: some View {
-        SessionDiscussionManager(session: .constant(SessionDetails(id: "123", localStatus: "SESSION", sessionStatus: "DISCUSSING", dispalyName: "Alec")),
+        DiscussionManager(session: .constant(SessionDetails(id: "123", localStatus: "SESSION", sessionStatus: "DISCUSSING", dispalyName: "Alec")),
                                  usersDetails: .constant(UsersMessage(moderator: nil, displayNames: nil)),
                                  topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)),
                                  discussionVotesDetails: .constant(DiscussionVotesDetails(moreTimeVotesCount: 0, finishTopicVotesCount: 0)))

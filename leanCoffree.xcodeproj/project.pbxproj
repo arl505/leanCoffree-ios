@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		700F60DB259BC35000AFC5E2 /* SessionDiscussionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F60DA259BC35000AFC5E2 /* SessionDiscussionManager.swift */; };
-		700F60E9259BE0EE00AFC5E2 /* CurrentDiscussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700F60E8259BE0EE00AFC5E2 /* CurrentDiscussionView.swift */; };
-		70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */; };
-		70125F9E259AD8250050DB25 /* TopicDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */; };
 		7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F16B2597EB840092F739 /* leanCoffreeApp.swift */; };
 		7047F1702597EB870092F739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F16F2597EB870092F739 /* Assets.xcassets */; };
 		7047F1732597EB870092F739 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7047F1722597EB870092F739 /* Preview Assets.xcassets */; };
 		7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F19C2597ECDF0092F739 /* StateMachine.swift */; };
-		7047F1A82597EEB20092F739 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1A72597EEB20092F739 /* Welcome.swift */; };
-		7047F1BF25980E980092F739 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1BE25980E980092F739 /* CreateSession.swift */; };
-		7047F1C425981CBB0092F739 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1C325981CBB0092F739 /* SessionManager.swift */; };
-		7047F1D1259824210092F739 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7047F1D0259824210092F739 /* JoinSession.swift */; };
-		70605D822599BF880011CFF0 /* ComposeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70605D812599BF880011CFF0 /* ComposeTopic.swift */; };
-		70ABC2BE259846410019957E /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABC2BD259846410019957E /* StompClient.swift */; };
-		70AC774A259BBBB00049A544 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC7749259BBBB00049A544 /* UsersList.swift */; };
-		70B74B692599A9300066D86F /* DiscussionBacklog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B74B682599A9300066D86F /* DiscussionBacklog.swift */; };
 		70CB502E259A6D0D007D6ABB /* StompClientLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB502D259A6D0D007D6ABB /* StompClientLib.swift */; };
+		70D2C7FE259C0E040081C2B3 /* ComposeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C7FA259C0E030081C2B3 /* ComposeTopic.swift */; };
+		70D2C7FF259C0E040081C2B3 /* TopicDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C7FB259C0E030081C2B3 /* TopicDeleteButton.swift */; };
+		70D2C800259C0E040081C2B3 /* StartedBacklog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C7FC259C0E040081C2B3 /* StartedBacklog.swift */; };
+		70D2C801259C0E040081C2B3 /* TopicVotingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C7FD259C0E040081C2B3 /* TopicVotingButton.swift */; };
+		70D2C808259C0E190081C2B3 /* StompClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C805259C0E190081C2B3 /* StompClient.swift */; };
+		70D2C809259C0E190081C2B3 /* DisplayNamePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C806259C0E190081C2B3 /* DisplayNamePrompt.swift */; };
+		70D2C80A259C0E190081C2B3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C807259C0E190081C2B3 /* SessionManager.swift */; };
+		70D2C811259C0E7F0081C2B3 /* CreateSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C80E259C0E7F0081C2B3 /* CreateSession.swift */; };
+		70D2C812259C0E7F0081C2B3 /* JoinSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C80F259C0E7F0081C2B3 /* JoinSession.swift */; };
+		70D2C813259C0E7F0081C2B3 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C810259C0E7F0081C2B3 /* Welcome.swift */; };
+		70D2C819259C0E8A0081C2B3 /* UsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C817259C0E8A0081C2B3 /* UsersList.swift */; };
+		70D2C81F259C0E9E0081C2B3 /* CurrentTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C81E259C0E9E0081C2B3 /* CurrentTopic.swift */; };
+		70D2C824259C0EB10081C2B3 /* DiscussionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C823259C0EB10081C2B3 /* DiscussionManager.swift */; };
 		70F9A33B259A99DC00876588 /* UsersMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A336259A99DC00876588 /* UsersMessage.swift */; };
 		70F9A33C259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */; };
 		70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A338259A99DC00876588 /* SessionDetails.swift */; };
 		70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A339259A99DC00876588 /* DiscussionVotesDetails.swift */; };
 		70F9A33F259A99DC00876588 /* TopicsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A33A259A99DC00876588 /* TopicsDetails.swift */; };
-		70F9A34C259A9F6300876588 /* DisplayNamePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */; };
 		BBDC428F599C5B5EEBF3CC86 /* libPods-leanCoffree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D444477ABD6340BC1E3E841F /* libPods-leanCoffree.a */; };
 /* End PBXBuildFile section */
 
@@ -51,10 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		700F60DA259BC35000AFC5E2 /* SessionDiscussionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDiscussionManager.swift; sourceTree = "<group>"; };
-		700F60E8259BE0EE00AFC5E2 /* CurrentDiscussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDiscussionView.swift; sourceTree = "<group>"; };
-		70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicVotingButton.swift; sourceTree = "<group>"; };
-		70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDeleteButton.swift; sourceTree = "<group>"; };
 		7047F1682597EB840092F739 /* leanCoffree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leanCoffree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F16B2597EB840092F739 /* leanCoffreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leanCoffreeApp.swift; sourceTree = "<group>"; };
 		7047F16F2597EB870092F739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,21 +59,25 @@
 		7047F1792597EB870092F739 /* leanCoffreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leanCoffreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F1842597EB870092F739 /* leanCoffreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = leanCoffreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7047F19C2597ECDF0092F739 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
-		7047F1A72597EEB20092F739 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
-		7047F1BE25980E980092F739 /* CreateSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
-		7047F1C325981CBB0092F739 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		7047F1D0259824210092F739 /* JoinSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
-		70605D812599BF880011CFF0 /* ComposeTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTopic.swift; sourceTree = "<group>"; };
-		70ABC2BD259846410019957E /* StompClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClient.swift; sourceTree = "<group>"; };
-		70AC7749259BBBB00049A544 /* UsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
-		70B74B682599A9300066D86F /* DiscussionBacklog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionBacklog.swift; sourceTree = "<group>"; };
 		70CB502D259A6D0D007D6ABB /* StompClientLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClientLib.swift; sourceTree = "<group>"; };
+		70D2C7FA259C0E030081C2B3 /* ComposeTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTopic.swift; sourceTree = "<group>"; };
+		70D2C7FB259C0E030081C2B3 /* TopicDeleteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDeleteButton.swift; sourceTree = "<group>"; };
+		70D2C7FC259C0E040081C2B3 /* StartedBacklog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartedBacklog.swift; sourceTree = "<group>"; };
+		70D2C7FD259C0E040081C2B3 /* TopicVotingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicVotingButton.swift; sourceTree = "<group>"; };
+		70D2C805259C0E190081C2B3 /* StompClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StompClient.swift; sourceTree = "<group>"; };
+		70D2C806259C0E190081C2B3 /* DisplayNamePrompt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayNamePrompt.swift; sourceTree = "<group>"; };
+		70D2C807259C0E190081C2B3 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		70D2C80E259C0E7F0081C2B3 /* CreateSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSession.swift; sourceTree = "<group>"; };
+		70D2C80F259C0E7F0081C2B3 /* JoinSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinSession.swift; sourceTree = "<group>"; };
+		70D2C810259C0E7F0081C2B3 /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		70D2C817259C0E8A0081C2B3 /* UsersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersList.swift; sourceTree = "<group>"; };
+		70D2C81E259C0E9E0081C2B3 /* CurrentTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTopic.swift; sourceTree = "<group>"; };
+		70D2C823259C0EB10081C2B3 /* DiscussionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionManager.swift; sourceTree = "<group>"; };
 		70F9A336259A99DC00876588 /* UsersMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersMessage.swift; sourceTree = "<group>"; };
 		70F9A337259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessOrFailureAndErrorBody.swift; sourceTree = "<group>"; };
 		70F9A338259A99DC00876588 /* SessionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDetails.swift; sourceTree = "<group>"; };
 		70F9A339259A99DC00876588 /* DiscussionVotesDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionVotesDetails.swift; sourceTree = "<group>"; };
 		70F9A33A259A99DC00876588 /* TopicsDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsDetails.swift; sourceTree = "<group>"; };
-		70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNamePrompt.swift; sourceTree = "<group>"; };
 		9D82686353480B3B6226BE52 /* Pods-leanCoffree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.release.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.release.xcconfig"; sourceTree = "<group>"; };
 		A19C37DBDA0EE0A871A4A116 /* Pods-leanCoffree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leanCoffree.debug.xcconfig"; path = "Target Support Files/Pods-leanCoffree/Pods-leanCoffree.debug.xcconfig"; sourceTree = "<group>"; };
 		D444477ABD6340BC1E3E841F /* libPods-leanCoffree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-leanCoffree.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,24 +132,12 @@
 		7047F16A2597EB840092F739 /* leanCoffree */ = {
 			isa = PBXGroup;
 			children = (
+				70D2C7DB259C0CC30081C2B3 /* views */,
 				70F9A335259A998E00876588 /* models */,
 				7047F16B2597EB840092F739 /* leanCoffreeApp.swift */,
 				7047F19C2597ECDF0092F739 /* StateMachine.swift */,
-				7047F1A72597EEB20092F739 /* Welcome.swift */,
-				7047F1BE25980E980092F739 /* CreateSession.swift */,
-				7047F1D0259824210092F739 /* JoinSession.swift */,
-				7047F1C325981CBB0092F739 /* SessionManager.swift */,
-				70ABC2BD259846410019957E /* StompClient.swift */,
-				70F9A34B259A9F6300876588 /* DisplayNamePrompt.swift */,
-				70AC7749259BBBB00049A544 /* UsersList.swift */,
-				70605D812599BF880011CFF0 /* ComposeTopic.swift */,
-				70B74B682599A9300066D86F /* DiscussionBacklog.swift */,
-				70125F8F259AC7B10050DB25 /* TopicVotingButton.swift */,
-				70125F9D259AD8250050DB25 /* TopicDeleteButton.swift */,
-				700F60DA259BC35000AFC5E2 /* SessionDiscussionManager.swift */,
-				700F60E8259BE0EE00AFC5E2 /* CurrentDiscussionView.swift */,
-				7047F1742597EB870092F739 /* Info.plist */,
 				70CB502D259A6D0D007D6ABB /* StompClientLib.swift */,
+				7047F1742597EB870092F739 /* Info.plist */,
 				7047F16F2597EB870092F739 /* Assets.xcassets */,
 				7047F1712597EB870092F739 /* Preview Content */,
 			);
@@ -162,6 +150,58 @@
 				7047F1722597EB870092F739 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70D2C7DB259C0CC30081C2B3 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				70D2C7DD259C0CD90081C2B3 /* welcome */,
+				70D2C7DC259C0CD30081C2B3 /* session */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		70D2C7DC259C0CD30081C2B3 /* session */ = {
+			isa = PBXGroup;
+			children = (
+				70D2C7DE259C0CE40081C2B3 /* started */,
+				70D2C7DF259C0CE90081C2B3 /* discussing */,
+				70D2C807259C0E190081C2B3 /* SessionManager.swift */,
+				70D2C806259C0E190081C2B3 /* DisplayNamePrompt.swift */,
+				70D2C805259C0E190081C2B3 /* StompClient.swift */,
+				70D2C817259C0E8A0081C2B3 /* UsersList.swift */,
+			);
+			path = session;
+			sourceTree = "<group>";
+		};
+		70D2C7DD259C0CD90081C2B3 /* welcome */ = {
+			isa = PBXGroup;
+			children = (
+				70D2C810259C0E7F0081C2B3 /* Welcome.swift */,
+				70D2C80E259C0E7F0081C2B3 /* CreateSession.swift */,
+				70D2C80F259C0E7F0081C2B3 /* JoinSession.swift */,
+			);
+			path = welcome;
+			sourceTree = "<group>";
+		};
+		70D2C7DE259C0CE40081C2B3 /* started */ = {
+			isa = PBXGroup;
+			children = (
+				70D2C7FA259C0E030081C2B3 /* ComposeTopic.swift */,
+				70D2C7FC259C0E040081C2B3 /* StartedBacklog.swift */,
+				70D2C7FB259C0E030081C2B3 /* TopicDeleteButton.swift */,
+				70D2C7FD259C0E040081C2B3 /* TopicVotingButton.swift */,
+			);
+			path = started;
+			sourceTree = "<group>";
+		};
+		70D2C7DF259C0CE90081C2B3 /* discussing */ = {
+			isa = PBXGroup;
+			children = (
+				70D2C823259C0EB10081C2B3 /* DiscussionManager.swift */,
+				70D2C81E259C0E9E0081C2B3 /* CurrentTopic.swift */,
+			);
+			path = discussing;
 			sourceTree = "<group>";
 		};
 		70F9A335259A998E00876588 /* models */ = {
@@ -348,27 +388,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70AC774A259BBBB00049A544 /* UsersList.swift in Sources */,
+				70D2C819259C0E8A0081C2B3 /* UsersList.swift in Sources */,
+				70D2C7FF259C0E040081C2B3 /* TopicDeleteButton.swift in Sources */,
+				70D2C812259C0E7F0081C2B3 /* JoinSession.swift in Sources */,
 				7047F19D2597ECDF0092F739 /* StateMachine.swift in Sources */,
 				70F9A33D259A99DC00876588 /* SessionDetails.swift in Sources */,
+				70D2C808259C0E190081C2B3 /* StompClient.swift in Sources */,
 				70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */,
-				70125F90259AC7B10050DB25 /* TopicVotingButton.swift in Sources */,
-				70B74B692599A9300066D86F /* DiscussionBacklog.swift in Sources */,
-				700F60E9259BE0EE00AFC5E2 /* CurrentDiscussionView.swift in Sources */,
-				7047F1A82597EEB20092F739 /* Welcome.swift in Sources */,
-				7047F1C425981CBB0092F739 /* SessionManager.swift in Sources */,
-				700F60DB259BC35000AFC5E2 /* SessionDiscussionManager.swift in Sources */,
-				70F9A34C259A9F6300876588 /* DisplayNamePrompt.swift in Sources */,
-				70125F9E259AD8250050DB25 /* TopicDeleteButton.swift in Sources */,
-				7047F1BF25980E980092F739 /* CreateSession.swift in Sources */,
+				70D2C801259C0E040081C2B3 /* TopicVotingButton.swift in Sources */,
+				70D2C81F259C0E9E0081C2B3 /* CurrentTopic.swift in Sources */,
+				70D2C824259C0EB10081C2B3 /* DiscussionManager.swift in Sources */,
+				70D2C811259C0E7F0081C2B3 /* CreateSession.swift in Sources */,
+				70D2C800259C0E040081C2B3 /* StartedBacklog.swift in Sources */,
+				70D2C809259C0E190081C2B3 /* DisplayNamePrompt.swift in Sources */,
+				70D2C813259C0E7F0081C2B3 /* Welcome.swift in Sources */,
 				7047F16C2597EB840092F739 /* leanCoffreeApp.swift in Sources */,
 				70F9A33C259A99DC00876588 /* SuccessOrFailureAndErrorBody.swift in Sources */,
 				70F9A33F259A99DC00876588 /* TopicsDetails.swift in Sources */,
 				70CB502E259A6D0D007D6ABB /* StompClientLib.swift in Sources */,
-				70605D822599BF880011CFF0 /* ComposeTopic.swift in Sources */,
-				70ABC2BE259846410019957E /* StompClient.swift in Sources */,
-				7047F1D1259824210092F739 /* JoinSession.swift in Sources */,
 				70F9A33B259A99DC00876588 /* UsersMessage.swift in Sources */,
+				70D2C7FE259C0E040081C2B3 /* ComposeTopic.swift in Sources */,
+				70D2C80A259C0E190081C2B3 /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

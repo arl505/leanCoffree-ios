@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CurrentDiscussionView: View {
+struct CurrentTopic: View {
     
     @Binding var topicsDetails: AllTopicsMessage
     
@@ -31,8 +31,8 @@ struct CurrentDiscussionView: View {
     }
 }
 
-struct CurrentDiscussionView_Previews: PreviewProvider {
+struct CurrentTopic_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentDiscussionView(topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)))
+        CurrentTopic(topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)))
     }
 }
