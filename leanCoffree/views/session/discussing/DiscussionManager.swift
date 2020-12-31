@@ -101,6 +101,9 @@ struct DiscussionManager: View {
             }
         } else {
             DiscussionVoting(session: $session, usersDetails: $usersDetails, topicsDetails: $topicsDetails, discussionVotesDetails: $discussionVotesDetails, timerString: $timerString)
+                .onReceive(timer) { _ in
+                    parseDate()
+                }
         }
     }
 }
