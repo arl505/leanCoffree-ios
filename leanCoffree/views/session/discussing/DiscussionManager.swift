@@ -65,7 +65,7 @@ struct DiscussionManager: View {
                 }
                 
                 TabView(selection: $selectedTab) {
-                    Text("a")
+                    DiscussionBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
                         .onTapGesture {
                             selectedTab = "backlog"
                         }

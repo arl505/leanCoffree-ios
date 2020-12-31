@@ -29,6 +29,7 @@ struct TopicDeleteButton: View {
                     .foregroundColor(Color.white)
                     .padding(10)
             }
+            .buttonStyle(PlainButtonStyle()) 
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.white, lineWidth: 3))
