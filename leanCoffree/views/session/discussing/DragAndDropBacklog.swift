@@ -54,7 +54,7 @@ struct DragAndDropBacklog: View {
                 
                 List {
                     ForEach(backlog, id: \.text) { topic in
-                        BacklogItem(session: session, topic: topic, dragAndDrop: true, moderators: moderators, selectedTab: $selectedTab)
+                        BacklogItem(session: session, topic: topic, dragAndDrop: true, moderators: moderators, selectedTab: $selectedTab, topicsDetails: $topicsDetails)
                     }
                     .onMove(perform: reorder)
                 }

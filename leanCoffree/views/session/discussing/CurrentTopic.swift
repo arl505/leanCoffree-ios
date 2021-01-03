@@ -32,6 +32,26 @@ struct CurrentTopic: View {
                                 .padding()
                         }
                     )
+            } else {
+                Color(red: 0.13, green: 0.16, blue: 0.19)
+                    .ignoresSafeArea()
+                    .overlay(
+                        VStack {
+                            Text("Current Discussion Topic")
+                                .foregroundColor(Color.white)
+                                .font(.title)
+                                .padding()
+                            
+                            Spacer()
+                            
+                            Text("Discussion Completed!")
+                                .foregroundColor(Color.white)
+                                .font(.title2)
+                                .padding()
+                            
+                            Spacer()
+                        }
+                    )
             }
         }
     }

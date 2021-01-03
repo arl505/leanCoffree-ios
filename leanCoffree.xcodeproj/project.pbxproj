@@ -15,6 +15,7 @@
 		70A9C2C4259DD5120024EEA9 /* BacklogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9C2C3259DD5120024EEA9 /* BacklogItem.swift */; };
 		70A9C2CC259DD88C0024EEA9 /* DragAndDropBacklog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9C2CB259DD88C0024EEA9 /* DragAndDropBacklog.swift */; };
 		70A9C2D1259DD8CC0024EEA9 /* DiscussionBacklog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9C2D0259DD8CC0024EEA9 /* DiscussionBacklog.swift */; };
+		70A9C2E5259DE77B0024EEA9 /* PastTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A9C2E4259DE77B0024EEA9 /* PastTopics.swift */; };
 		70CB502E259A6D0D007D6ABB /* StompClientLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB502D259A6D0D007D6ABB /* StompClientLib.swift */; };
 		70D2C7FE259C0E040081C2B3 /* ComposeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C7FA259C0E030081C2B3 /* ComposeTopic.swift */; };
 		70D2C7FF259C0E040081C2B3 /* TopicDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D2C7FB259C0E030081C2B3 /* TopicDeleteButton.swift */; };
@@ -69,6 +70,7 @@
 		70A9C2C3259DD5120024EEA9 /* BacklogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklogItem.swift; sourceTree = "<group>"; };
 		70A9C2CB259DD88C0024EEA9 /* DragAndDropBacklog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropBacklog.swift; sourceTree = "<group>"; };
 		70A9C2D0259DD8CC0024EEA9 /* DiscussionBacklog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionBacklog.swift; sourceTree = "<group>"; };
+		70A9C2E4259DE77B0024EEA9 /* PastTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTopics.swift; sourceTree = "<group>"; };
 		70CB502D259A6D0D007D6ABB /* StompClientLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StompClientLib.swift; sourceTree = "<group>"; };
 		70D2C7FA259C0E030081C2B3 /* ComposeTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTopic.swift; sourceTree = "<group>"; };
 		70D2C7FB259C0E030081C2B3 /* TopicDeleteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDeleteButton.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				709911CC259D9374000528DB /* BasicDiscussionBacklog.swift */,
 				70A9C2CB259DD88C0024EEA9 /* DragAndDropBacklog.swift */,
 				70A9C2C3259DD5120024EEA9 /* BacklogItem.swift */,
+				70A9C2E4259DE77B0024EEA9 /* PastTopics.swift */,
 				70D2C837259C2E240081C2B3 /* DiscussionVoting.swift */,
 				70D2C841259C3AE40081C2B3 /* ModeratorFinalSay.swift */,
 			);
@@ -419,6 +422,7 @@
 				70F9A33E259A99DC00876588 /* DiscussionVotesDetails.swift in Sources */,
 				70D2C842259C3AE40081C2B3 /* ModeratorFinalSay.swift in Sources */,
 				70D2C801259C0E040081C2B3 /* TopicVotingButton.swift in Sources */,
+				70A9C2E5259DE77B0024EEA9 /* PastTopics.swift in Sources */,
 				70D2C81F259C0E9E0081C2B3 /* CurrentTopic.swift in Sources */,
 				70D2C824259C0EB10081C2B3 /* DiscussionManager.swift in Sources */,
 				70D2C811259C0E7F0081C2B3 /* CreateSession.swift in Sources */,

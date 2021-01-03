@@ -9,16 +9,31 @@ struct DiscussionBacklog: View {
     
     var body: some View {
         if let backlog = topicsDetails.discussionBacklogTopics {
-            if let moderators = usersDetails.moderator {
+            if backlog.count >= 1 {
+                if let moderators = usersDetails.moderator {
+                    Color(red: 0.13, green: 0.16, blue: 0.19)
+                        .ignoresSafeArea()
+                        .overlay(
+                            VStack {
+                                if (moderators.contains(session.dispalyName) && backlog.count > 1) {
+                                    DragAndDropBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
+                                } else {
+                                    BasicDiscussionBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
+                                }
+                            }
+                        )
+                }
+            } else {
                 Color(red: 0.13, green: 0.16, blue: 0.19)
                     .ignoresSafeArea()
                     .overlay(
                         VStack {
-                            if (moderators.contains(session.dispalyName) && backlog.count > 1) {
-                                DragAndDropBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
-                            } else {
-                                BasicDiscussionBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
-                            }
+                            Text("You've cleared the discussion backlog!")
+                                .font(.title)
+                                .foregroundColor(Color.white)
+                                .padding()
+                            
+                            Spacer()
                         }
                     )
             }

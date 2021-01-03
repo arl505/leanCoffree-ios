@@ -7,26 +7,29 @@ struct BacklogItem: View {
     let dragAndDrop: Bool
     let moderators: [String]
     @Binding var selectedTab: String
+    @Binding var topicsDetails: AllTopicsMessage
     
     func pullTopicForDiscussion(_ nextText: String, _ nextAuthor: String) {
-        if let currText = topic.text {
-            if let currAuthor = topic.authorDisplayName {
-                let json = ["command": "NEXT",
-                            "sessionId": session.id,
-                            "currentTopicText": currText,
-                            "currentTopicAuthorDisplayName": currAuthor,
-                            "nextTopicText": nextText,
-                            "nextTopicAuthorDisplayName": nextAuthor]
-                let url = URL(string: "https://leancoffree.com:8085" + "/refresh-topics")!
-                var request = URLRequest(url: url)
-                let jsonData = try? JSONSerialization.data(withJSONObject: json)
-                request.httpBody = jsonData
-                request.httpMethod = "POST"
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard data != nil else { return }
-                    selectedTab = "current"
-                }.resume()
+        if let currTopic = topicsDetails.currentDiscussionItem {
+            if let currText = currTopic.text {
+                if let currAuthor = currTopic.authorDisplayName {
+                    let json = ["command": "NEXT",
+                                "sessionId": session.id,
+                                "currentTopicText": currText,
+                                "currentTopicAuthorDisplayName": currAuthor,
+                                "nextTopicText": nextText,
+                                "nextTopicAuthorDisplayName": nextAuthor]
+                    let url = URL(string: "https://leancoffree.com:8085" + "/refresh-topics")!
+                    var request = URLRequest(url: url)
+                    let jsonData = try? JSONSerialization.data(withJSONObject: json)
+                    request.httpBody = jsonData
+                    request.httpMethod = "POST"
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                    URLSession.shared.dataTask(with: request) { data, response, error in
+                        guard data != nil else { return }
+                        selectedTab = "current"
+                    }.resume()
+                }
             }
         }
     }
@@ -88,6 +91,7 @@ struct BacklogItem_Previews: PreviewProvider {
                     topic: DiscussionBacklogTopics(voters: nil, text: "test here", authorDisplayName: ""),
                     dragAndDrop: false,
                     moderators: [],
-                    selectedTab: .constant("backlog"))
+                    selectedTab: .constant("backlog"),
+                    topicsDetails: .constant(AllTopicsMessage(currentDiscussionItem: nil, discussionBacklogTopics: nil, discussedTopics: nil)))
     }
 }

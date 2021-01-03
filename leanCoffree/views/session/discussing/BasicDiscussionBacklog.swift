@@ -24,7 +24,7 @@ struct BasicDiscussionBacklog: View {
                         if topic.text != nil {
                             if topic.voters != nil {
                                 if let moderators = usersDetails.moderator {
-                                    BacklogItem(session: session, topic: topic, dragAndDrop: false, moderators: moderators, selectedTab: $selectedTab)
+                                    BacklogItem(session: session, topic: topic, dragAndDrop: false, moderators: moderators, selectedTab: $selectedTab, topicsDetails: $topicsDetails)
                                 }
                             }
                         }

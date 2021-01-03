@@ -83,7 +83,7 @@ struct DiscussionManager: View {
                         }
                         .tag("current")
                     
-                    Text("c")
+                    PastTopics(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
                         .onTapGesture {
                             selectedTab = "past"
                         }
