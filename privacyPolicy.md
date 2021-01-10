@@ -1,9 +1,14 @@
 # Privacy Policy
 
-I'm not a lawyer nor a business person. I'm a software developer who created an app and thought it would be cool to have my app publicly available on the app store.
+Lean coffree does not collect any personal information:
+  * providing a valid/real name is not required
+  * you will never be asked for:
+    * your address
+    * your email
+    * your phone number(s)
+    * SSN or other sensitive information
+    * any finnancial information
+    
+Lean coffree sessions allow users to input data. Lean coffee is written as a side project in a single person's free time for learning SwiftUI. I do not claim to be a security expert and thus do not guarantee the privacy and security of any data inputted to Lean Coffree. No sensitive data should be inputted to lean Lean Coffree.
 
-Apple requires a url to a priviacy policy for me to ship my app, so I am writing this.
-
-I am not a security expert, I **do not** guarantee the security of your data. But I also am not an asshole.
-
-I will take care to follow best practices to ensure the security and privacy of lean coffee sessions. I will not willingly sell or share data to any third parties.
+With that said, I have attempted to follow general security best practices to ensure a safe and secure experience.
