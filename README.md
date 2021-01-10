@@ -1,3 +1,5 @@
+<p align="center"><img src="screenshots/00.png"/></p>
+
 # Lean Coffree - iOS
 ### iOS client for leanCoffree app
 
