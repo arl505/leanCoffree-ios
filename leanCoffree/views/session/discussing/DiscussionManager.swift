@@ -15,6 +15,10 @@ struct DiscussionManager: View {
         session = SessionDetails(id: session.id, localStatus: status, sessionStatus: sessionStatus, dispalyName: session.dispalyName, votesLeft: session.votesLeft)
     }
     
+    func setActiveTab(_ activeTab: String) {
+        selectedTab = activeTab
+    }
+    
     func parseDate() {
         if let currentDiscussionItem = topicsDetails.currentDiscussionItem {
             if let endTime = currentDiscussionItem.endTime {
@@ -64,40 +68,95 @@ struct DiscussionManager: View {
                     .padding()
                 }
                 
-                TabView(selection: $selectedTab) {
+                if(selectedTab == "backlog") {
                     DiscussionBacklog(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
-                        .onTapGesture {
-                            selectedTab = "backlog"
-                        }
-                        .tabItem {
-                            Text("Backlog")
-                        }
-                        .tag("backlog")
-                    
-                    CurrentTopic(topicsDetails: $topicsDetails, timerString: $timerString)
-                        .onTapGesture {
-                            selectedTab = "current"
-                        }
-                        .tabItem {
-                            Text("Current")
-                        }
-                        .tag("current")
-                    
+                }
+                
+                if(selectedTab == "current") {
+                    CurrentTopic(session: $session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, timerString: $timerString)
+                }
+                
+                if(selectedTab == "past") {
                     PastTopics(session: session, topicsDetails: $topicsDetails, usersDetails: $usersDetails, selectedTab: $selectedTab)
-                        .onTapGesture {
-                            selectedTab = "past"
+                }
+                
+                Spacer()
+                
+                Color(red: 0.13 * 0.75, green: 0.16 * 0.75, blue: 0.19 * 0.75)
+                    .ignoresSafeArea()
+                    .frame(maxHeight: UIScreen.main.bounds.height / 10)
+                    .overlay(
+                        HStack {
+                            if selectedTab == "backlog" {
+                                Button(action: {}) {
+                                    HStack {
+                                        Spacer()
+                                        Text("Backlog")
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                    }
+                                    .frame(width: UIScreen.main.bounds.width / 3)
+                                }
+                            } else {
+                                Button(action: {self.setActiveTab("backlog")}) {
+                                    HStack {
+                                        Spacer()
+                                        Text("Backlog")
+                                            .foregroundColor(Color.gray)
+                                        Spacer()
+                                    }
+                                    .frame(width: UIScreen.main.bounds.width / 3)
+                                }
+                            }
+                            
+                            if selectedTab == "current" {
+                                Button(action: {}) {
+                                    HStack {
+                                        Spacer()
+                                        Text("Current")
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                    }
+                                    .frame(width: UIScreen.main.bounds.width / 3)
+                                }
+                            } else {
+                                Button(action: {self.setActiveTab("current")}) {
+                                    HStack {
+                                        Spacer()
+                                        Text("Current")
+                                            .foregroundColor(Color.gray)
+                                        Spacer()
+                                    }
+                                    .frame(width: UIScreen.main.bounds.width / 3)
+                                }
+                            }
+                            
+                            if selectedTab == "past" {
+                                Button(action: {}) {
+                                    HStack {
+                                        Spacer()
+                                        Text("Past")
+                                            .foregroundColor(Color.white)
+                                        Spacer()
+                                    }
+                                    .frame(width: UIScreen.main.bounds.width / 3)
+                                }
+                            } else {
+                                Button(action: {self.setActiveTab("past")}) {
+                                    HStack {
+                                        Spacer()
+                                        Text("Past")
+                                            .foregroundColor(Color.gray)
+                                        Spacer()
+                                    }
+                                    .frame(width: UIScreen.main.bounds.width / 3)
+                                }
+                            }
                         }
-                        .tabItem {
-                            Text("Past")
-                        }
-                        .tag("past")
-                }
-                .onAppear() {
-                    UITabBar.appearance().barTintColor = UIColor(red: 0.13 * 0.75, green: 0.16 * 0.75, blue: 0.19 * 0.75, alpha: 1)
-                }
-                .onReceive(timer) { _ in
-                    parseDate()
-                }
+                    )
+            }
+            .onReceive(timer) { _ in
+                parseDate()
             }
         } else {
             DiscussionVoting(session: $session, usersDetails: $usersDetails, topicsDetails: $topicsDetails, discussionVotesDetails: $discussionVotesDetails, timerString: $timerString)

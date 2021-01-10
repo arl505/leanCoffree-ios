@@ -52,6 +52,10 @@ class StompClient: StompClientLibDelegate {
         if (destination.contains("users")) {
             usersDetails = try! JSONDecoder().decode(UsersMessage.self, from: Data(stringBody!.utf8))
         } else if (destination.contains("discussion-topics")) {
+            if stringBody! == "" {
+                session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")
+                return
+            }
             let topics = try! JSONDecoder().decode(AllTopicsMessage.self, from: Data(stringBody!.utf8))
             var count = 0
             if let backlog = topics.discussionBacklogTopics {

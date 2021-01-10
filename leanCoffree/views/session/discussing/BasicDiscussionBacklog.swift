@@ -18,17 +18,12 @@ struct BasicDiscussionBacklog: View {
     
     var body: some View {
         if let backlog = topicsDetails.discussionBacklogTopics {
-            if usersDetails.moderator != nil {
+            if let moderators = usersDetails.moderator {
                 List {
                     ForEach(backlog, id: \.text) { topic in
-                        if topic.text != nil {
-                            if topic.voters != nil {
-                                if let moderators = usersDetails.moderator {
-                                    BacklogItem(session: session, topic: topic, dragAndDrop: false, moderators: moderators, selectedTab: $selectedTab, topicsDetails: $topicsDetails)
-                                }
-                            }
-                        }
+                        BacklogItem(session: session, topic: topic, dragAndDrop: false, moderators: moderators, selectedTab: $selectedTab, topicsDetails: $topicsDetails)
                     }
+                    
                 }
                 .colorScheme(.dark)
                 .environment(\.editMode, .constant(.inactive))

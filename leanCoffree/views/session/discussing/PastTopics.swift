@@ -111,6 +111,7 @@ struct PastTopics: View {
                     .overlay(
                         VStack {
                             Text("Topics will appear here after they have finished discussion")
+                                .multilineTextAlignment(.center)
                                 .font(.title)
                                 .foregroundColor(Color.white)
                                 .padding()
