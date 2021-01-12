@@ -64,15 +64,27 @@ struct JoinSession: View {
                         .padding()
                         
                         Spacer()
+                        
+                        Button(action: {}) {
+                            Image("group")
+                                .resizable()
+                                .frame(width: 45, height: 45)
+                        }
+                        .padding()
+                        .hidden()
                     }
                     
                     Text("Enter session link or ID below")
                         .font(.title)
-                        .padding(.bottom)
+                        .padding()
                         .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
                     Text("Don't have one? Return to the home screen and create a session!")
                         .font(.headline)
+                        .multilineTextAlignment(.center)
                         .foregroundColor(Color.white)
+                        .padding(.leading)
+                        .padding(.trailing)
                     
                     Spacer()
                     

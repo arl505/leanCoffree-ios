@@ -5,8 +5,10 @@ struct DisplayNamePrompt: View {
     @State private var isDisplayNameSubmissionInvalid = false
     @State private var invalidDisplayNameError = ""
     @State private var displayName = ""
+    @State private var showShareableLink = false
     @Binding var session: SessionDetails
     let stompClient: StompClient
+    @State var sessionState = ""
     
     struct AddUserResponse: Decodable {
         let showShareableLink: Bool
@@ -34,8 +36,13 @@ struct DisplayNamePrompt: View {
                                 displayName = ""
                             }
                         } else {
-                            if let sessionStatus = resData.sessionStatus {
-                                session = SessionDetails(id: session.id, localStatus: "SESSION", sessionStatus: sessionStatus, dispalyName: displayName)
+                            if let x = resData.sessionStatus  {
+                                sessionState = x
+                                if resData.showShareableLink == true {
+                                    showShareableLink = true
+                                } else {
+                                    session = SessionDetails(id: session.id, localStatus: "SESSION", sessionStatus: sessionState, dispalyName: displayName)
+                                }
                             }
                         }
                     }
@@ -44,46 +51,94 @@ struct DisplayNamePrompt: View {
         }
     }
     
+    func continueSession() {
+        session = SessionDetails(id: session.id, localStatus: "SESSION", sessionStatus: sessionState, dispalyName: displayName)
+    }
+    
+    func quitSession() {
+        session = SessionDetails(id: "", localStatus: "WELCOME", sessionStatus: "", dispalyName: "")
+    }
+    
     var body: some View {
         Color(red: 0.13, green: 0.16, blue: 0.19)
             .ignoresSafeArea()
             .overlay(
                 VStack {
-                    Text("Enter a display name")
-                        .foregroundColor(Color.white)
-                        .padding(.bottom)
-                        .padding(.top)
-                        .font(.title)
-                    Text("This will be visible to all in session")
-                        .foregroundColor(Color.white)
-                        .font(.headline)
+                    HStack {
+                        Button(action: {self.quitSession()}) {
+                            Text("< Home")
+                                .foregroundColor(Color.white)
+                        }
+                        .padding()
+                        
+                        Spacer()
+                        
+                        Button(action: {}) {
+                            Image("group")
+                                .resizable()
+                                .frame(width: 45, height: 45)
+                        }
+                        .padding()
+                        .hidden()
+                    }
                     
-                    Spacer()
-                    
-                    ZStack(alignment: .leading) {
-                        if displayName.isEmpty { Text("Display Name").foregroundColor(.white).padding().padding() }
-                        TextField("", text: $displayName)
-                            .padding()
-                            .foregroundColor(Color.white)
+                    if !showShareableLink {
+                        Color(red: 0.13, green: 0.16, blue: 0.19)
+                            .ignoresSafeArea()
                             .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white, lineWidth: 3))
-                            .padding()
+                                VStack {
+                                    Text("Enter a display name")
+                                        .foregroundColor(Color.white)
+                                        .padding(.bottom)
+                                        .padding(.top)
+                                        .font(.title)
+                                    Text("This will be visible to all in session")
+                                        .foregroundColor(Color.white)
+                                        .font(.headline)
+                                    
+                                    Spacer()
+                                    
+                                    ZStack(alignment: .leading) {
+                                        if displayName.isEmpty { Text("Display Name").foregroundColor(.white).padding().padding() }
+                                        TextField("", text: $displayName)
+                                            .padding()
+                                            .foregroundColor(Color.white)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 20)
+                                                    .stroke(Color.white, lineWidth: 3))
+                                            .padding()
+                                    }
+                                    
+                                    Button(action: {self.submitDisplayName()}) {
+                                        Text("Submit")
+                                            .padding()
+                                            .foregroundColor(Color.white)
+                                    }
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(Color.white, lineWidth: 3))
+                                    .alert(isPresented: $isDisplayNameSubmissionInvalid) {
+                                        Alert(title: Text("Invalid entry"), message: Text(invalidDisplayNameError), dismissButton: .default(Text("OK")))
+                                    }
+                                    
+                                    Spacer()
+                                }
+                            )
+                    } else {
+                        Invite(session: $session)
+                        
+                        Spacer()
+                        
+                        Button(action: {self.continueSession()}) {
+                            Text("Continue")
+                                .foregroundColor(Color.white)
+                                .padding()
+                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.white, lineWidth: 3)
+                        )
                     }
-                    
-                    Button(action: {self.submitDisplayName()}) {
-                        Text("Submit")
-                            .padding()
-                            .foregroundColor(Color.white)
-                    }
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.white, lineWidth: 3))
-                    .alert(isPresented: $isDisplayNameSubmissionInvalid) {
-                        Alert(title: Text("Invalid entry"), message: Text(invalidDisplayNameError), dismissButton: .default(Text("OK")))
-                    }
-                    
-                    Spacer()
                 }
             )
     }
